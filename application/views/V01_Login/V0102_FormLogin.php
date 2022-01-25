@@ -12,7 +12,7 @@
 
 <html>
 <head>
-   <script type="text/javascript" src="<?php echo base_url('js/jquery-3.3.1.min.js') ?>"></script>
+   <script type="text/javascript" src="<?= base_url('js/jquery-3.3.1.min.js') ?>"></script>
    <script  type="text/javascript">
    function popup(){
 	  window.open('tell_friend2.php', 'tellafriend_script','scrollbars=1,statusbar=1,resizable=1,width=400,height=510');
