@@ -11,7 +11,7 @@
 | -----------------------------------------------------------------------  */
 defined('BASEPATH') OR exit('No direct   access allowed');
    $autoload['packages']  = array();
-   $autoload['libraries'] = array('database');
+   $autoload['libraries'] = array('database','session');
    $autoload['drivers']   = array();
    $autoload['helper']    = array('url','file','form','html');
    $autoload['config']    = array();

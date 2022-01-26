@@ -25,11 +25,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    margin:10px auto;
    position: relative;
    width:1250px;     <?php // Panjang Kotak Judul Horisontal  ?>
+   z-index: 1;
   }
   .menu-wrapper ul{
    margin:0;
    padding:0;
    background-color: #8A2BE2;  <?php // Warna Kotak Horisontal Menu Utama ?>
+   z-index: 1;
   }
   ul.menu-horizontal { <?php // Kotak Horisontal ?>   
     width:100%;
@@ -68,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     position: absolute;
     right: 5px;
     top:17px;
-    z-index:
+    z-index:1;
    }
    /*Style tanda panah pada sub menu level 1 dan level 2*/
    ul.menu-horizontal li ul li span.arrow { <?php // Menampilkan Tanda Panah Kiri ?>
@@ -79,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     position: absolute;
     right: 5px;
     top:17px;
-    z-index:
+    z-index:1;
    }
     /*Menyembunyikan sub menu ketika tidak dihover*/
    ul.submenu {  <?php // Sebunyikan Submenu ?> 

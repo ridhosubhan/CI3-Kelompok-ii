@@ -88,7 +88,7 @@
         <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
   <div class="demo">
   
-  <form id="form1" name="form1" method="post" action="index.php/C0001/pengecekan_password">
+  <form id="form1" name="form1" method="post" action="index.php/C01_Login/pengecekan_password">
     <table bgcolor="black" width="200" border="1" align="center" cellpadding="1" cellspacing="0">
     <tr><Center>
       <th width="528" scope="col"><div align="right"><B></B><font Color ="Yellow">Password</font></B></div></th>
