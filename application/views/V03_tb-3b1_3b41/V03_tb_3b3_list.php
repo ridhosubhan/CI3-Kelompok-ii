@@ -15,7 +15,7 @@
     <!-- datatable button -->
     <link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet" crossorigin="anonymous">
     
-    <title>TB 3b2</title>
+    <title>TB 3b3</title>
   </head>
   <body>
 
@@ -26,7 +26,7 @@
     <!-- DataTables -->
     <div class="card mb-3">
         <div class="card-header">
-            <a href="<?php echo site_url('/C03_tb_3b2/add') ?>" class="btn btn-primary float-start">Tambah Data</a>
+            <a href="<?php echo site_url('/C03_tb_3b3/add') ?>" class="btn btn-primary float-start">Tambah Data</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -35,9 +35,9 @@
                         <tr>
                             <th>No</th>
                             <th>Sumber Pembiayaan</th>
-                            <th>Jumlah Judul Penelitian TS-2</th>
-                            <th>Jumlah Judul Penelitian TS-1</th>
-                            <th>Jumlah Judul Penelitian TS</th>
+                            <th>Jumlah Judul PKM TS-2</th>
+                            <th>Jumlah Judul PKM TS-1</th>
+                            <th>Jumlah Judul PKM TS</th>
                             <th>Jumlah</th>
                             <th>Aksi</th>
                         </tr>
@@ -45,7 +45,7 @@
                     <tbody>
                         <?php
                             $no = 0; 
-                            foreach ($tb_3b2 as $data):
+                            foreach ($tb_3b3 as $data):
                                 $no++; 
                         ?>
                         <tr>
@@ -72,21 +72,21 @@
                                 ?>
                             </td>
                             <td>
-                                <?php echo $data->jml_judul_penelitian_TS_2 ?>
+                                <?php echo $data->jml_judul_pkm_TS_2 ?>
                             </td>
                             <td>
-                                <?php echo $data->jml_judul_penelitian_TS_1 ?>
+                                <?php echo $data->jml_judul_pkm_TS_1 ?>
                             </td>
                             <td>
-                                <?php echo $data->jml_judul_penelitian_TS ?>
+                                <?php echo $data->jml_judul_pkm_TS ?>
                             </td>
                             <td>
                                 <?php echo $data->jumlah ?>
                             </td>
                             <td width="150">
-                                <a href="<?php echo site_url('/C03_tb_3b2/edit/'.$data->id) ?>"
+                                <a href="<?php echo site_url('/C03_tb_3b3/edit/'.$data->id) ?>"
                                     class="btn btn-small btn-warning"><i class="fas fa-edit"></i> Edit</a>
-                                <button  onclick="deleteConfirm('<?php echo site_url('/C03_tb_3b2/delete/'.$data->id) ?>')"
+                                <button  onclick="deleteConfirm('<?php echo site_url('/C03_tb_3b3/delete/'.$data->id) ?>')"
                                     class="btn btn-small btn-danger"><i class="fas fa-trash"></i> Hapus</button>
                             </td>
                         </tr>
