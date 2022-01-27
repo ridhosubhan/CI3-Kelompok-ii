@@ -14,9 +14,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html>
 <head>
  <title>Multilevel Dropdown Menu</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
  <style type="text/css">
  body {
    margin:0;
@@ -28,11 +25,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    margin:10px auto;
    position: relative;
    width:1250px;     <?php // Panjang Kotak Judul Horisontal  ?>
+   z-index: 1;
   }
   .menu-wrapper ul{
    margin:0;
    padding:0;
    background-color: #8A2BE2;  <?php // Warna Kotak Horisontal Menu Utama ?>
+   z-index: 1;
   }
   ul.menu-horizontal { <?php // Kotak Horisontal ?>   
     width:100%;
@@ -71,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     position: absolute;
     right: 5px;
     top:17px;
-    z-index:
+    z-index:1;
    }
    /*Style tanda panah pada sub menu level 1 dan level 2*/
    ul.menu-horizontal li ul li span.arrow { <?php // Menampilkan Tanda Panah Kiri ?>
@@ -82,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     position: absolute;
     right: 5px;
     top:17px;
-    z-index:
+    z-index:1;
    }
     /*Menyembunyikan sub menu ketika tidak dihover*/
    ul.submenu {  <?php // Sebunyikan Submenu ?> 
@@ -151,7 +150,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			 <li><a href="<?php echo site_url('C02_Password/Proses_CariDataPassword');?>"><div    align="left">5. Cari Data (Search)</div></a></li>	
 			 <li><a href="<?php echo site_url('C02_Password/Proses_CetakDataPassword');?>"><div   align="left">6. Cetak Data (Print)</div></a></li>
           </ul>
-		</li>
+		  </li>
+
+      <li><a href="<?php echo site_url('C03_tb_3b1/index');?>">3.b1. Tabel 3b1</a></li>
+      <li><a href="<?php echo site_url('C03_tb_3b2/index');?>">3.b2. Tabel 3b2</a></li>
+      <li><a href="<?php echo site_url('C03_tb_3b3/index');?>">3.b3. Tabel 3b3</a></li>
+      <li><a href="<?php echo site_url('C03_tb_3b41/index');?>">3.b41. Tabel 3b41</a></li>
 	  </ul>	
 	</li>
 	
@@ -193,9 +197,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
    <!-- <img src="<?php echo base_url('images/gedungumbx.jpeg') ?>" width="400" height="300"/> -->
 </Center>
-  
-  <!-- JAWASKRIP -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="<?php echo base_url('js/jquery-3.3.1.min.js') ?>"></script>
 </body>
 </html>

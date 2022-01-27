@@ -150,7 +150,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			 <li><a href="<?php echo site_url('C02_Password/Proses_CariDataPassword');?>"><div    align="left">5. Cari Data (Search)</div></a></li>	
 			 <li><a href="<?php echo site_url('C02_Password/Proses_CetakDataPassword');?>"><div   align="left">6. Cetak Data (Print)</div></a></li>
           </ul>
-		</li>
+		  </li>
+
+      <li><a href="<?php echo site_url('C03_tb_3b1/index');?>">3.b1. Tabel 3b1</a></li>
+      <li><a href="<?php echo site_url('C03_tb_3b2/index');?>">3.b2. Tabel 3b2</a></li>
+      <li><a href="<?php echo site_url('C03_tb_3b3/index');?>">3.b3. Tabel 3b3</a></li>
+      <li><a href="<?php echo site_url('C03_tb_3b41/index');?>">3.b41. Tabel 3b41</a></li>
 	  </ul>	
 	</li>
 	
