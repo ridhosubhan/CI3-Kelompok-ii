@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2022 at 01:19 PM
+-- Generation Time: Jan 28, 2022 at 04:18 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -47,9 +47,9 @@ CREATE TABLE `tb-3b1` (
 CREATE TABLE `tb-3b2` (
   `id` int(11) NOT NULL,
   `sumber_pembiayaan` varchar(255) NOT NULL,
-  `jml_judul_penelitian-TS_2` int(11) NOT NULL,
-  `jml_judul_penelitian-TS_1` int(11) NOT NULL,
-  `jml_judul_penelitian-TS` int(11) NOT NULL,
+  `jml_judul_penelitian_TS_2` int(11) NOT NULL,
+  `jml_judul_penelitian_TS_1` int(11) NOT NULL,
+  `jml_judul_penelitian_TS` int(11) NOT NULL,
   `jumlah` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -57,10 +57,10 @@ CREATE TABLE `tb-3b2` (
 -- Dumping data for table `tb-3b2`
 --
 
-INSERT INTO `tb-3b2` (`id`, `sumber_pembiayaan`, `jml_judul_penelitian-TS_2`, `jml_judul_penelitian-TS_1`, `jml_judul_penelitian-TS`, `jumlah`) VALUES
-(1, 'a.) Perguruan Tinggi\r\nb.) Mandiri', 0, 0, 0, 0),
-(2, 'Lembaga dalam negeri (diluar PT)', 0, 0, 0, 0),
-(3, 'Lembaga luar negeri', 0, 0, 0, 0);
+INSERT INTO `tb-3b2` (`id`, `sumber_pembiayaan`, `jml_judul_penelitian_TS_2`, `jml_judul_penelitian_TS_1`, `jml_judul_penelitian_TS`, `jumlah`) VALUES
+(4, '1', 3, 4, 5, 120),
+(5, '2', 1, 1, 1, 3),
+(6, '3', 2, 2, 2, 6);
 
 -- --------------------------------------------------------
 
@@ -71,20 +71,11 @@ INSERT INTO `tb-3b2` (`id`, `sumber_pembiayaan`, `jml_judul_penelitian-TS_2`, `j
 CREATE TABLE `tb-3b3` (
   `id` int(11) NOT NULL,
   `sumber_pembiayaan` varchar(255) NOT NULL,
-  `jml_judul_pkm-TS_2` int(11) NOT NULL,
-  `jml_judul_pkm-TS_1` int(11) NOT NULL,
-  `jml_judul_pkm-TS` int(11) NOT NULL,
+  `jml_judul_pkm_TS_2` int(11) NOT NULL,
+  `jml_judul_pkm_TS_1` int(11) NOT NULL,
+  `jml_judul_pkm_TS` int(11) NOT NULL,
   `jumlah` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tb-3b3`
---
-
-INSERT INTO `tb-3b3` (`id`, `sumber_pembiayaan`, `jml_judul_pkm-TS_2`, `jml_judul_pkm-TS_1`, `jml_judul_pkm-TS`, `jumlah`) VALUES
-(1, 'a.) Perguruan Tinggi\r\nb.) Mandiri', 0, 0, 0, 0),
-(2, 'Lembaga dalam negeri (diluar PT)\r\n', 0, 0, 0, 0),
-(3, 'Lembaga luar negeri\r\n', 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -106,16 +97,7 @@ CREATE TABLE `tb-3b4-1` (
 --
 
 INSERT INTO `tb-3b4-1` (`id`, `jenis_publikasi`, `jml_judul_TS_2`, `jml_judul_TS_1`, `jml_judul_TS`, `jumlah`) VALUES
-(1, 'Jurnal penelitian tidak terakreditasi', 0, 0, 0, 0),
-(2, 'Jurnal penelitian nasional terakreditasi', 0, 0, 0, 0),
-(3, 'Jurnal penelitian internasional', 0, 0, 0, 0),
-(4, 'Jurnal penelitian internasional bereputasi', 0, 0, 0, 0),
-(5, 'Seminar wilayah/lokal/perguruan tinggi', 0, 0, 0, 0),
-(6, 'Seminar nasional', 0, 0, 0, 0),
-(7, 'Seminar internasional', 0, 0, 0, 0),
-(8, 'Tulisan di media massa wilayah', 0, 0, 0, 0),
-(9, 'Tulisan di media massa nasional', 0, 0, 0, 0),
-(10, 'Tulisan di media massa internasional', 0, 0, 0, 0);
+(12, '1', 12, 12, 12, 36);
 
 -- --------------------------------------------------------
 
@@ -143,6 +125,7 @@ INSERT INTO `tb_01password` (`id_password`, `id_fakultas`, `id_prodi`, `nidn_dos
 ('579c5b2deb6c2d27a4b9048367f9361c', 'F0001', '55201', '222206001', 'Nana Karyana Kurdi', '55201.02'),
 ('5c4a8cffa6d32ba238fe0c4a155f0d61', 'F0001', '55201', '409088804', 'sutadi', '55201.01'),
 ('698358ed6b160bf2a30003b223b46766', 'F0003', '0', '429097304', 'agusbagianto', '0.00'),
+('831167d1d11e16b877055beb00ffec4b', 'F0001', '48201', '0429119501', 'kokoak', '48201.02'),
 ('b222eaaab63ae22bd572e365d767fb7f', 'F0001', '20201', '1122077801', 'adiyasri', '0.00'),
 ('bc998cf2e0a825a30202867c918c8713', 'F0001', '54201', '405058406', 'utan sahiro ritongga', '54201.02'),
 ('d6fa1ae8fee889007cafbc33d02e8f83', 'F0003', 'F0032', '0402067302', 'daduk', 'F0032.02'),
@@ -156,7 +139,7 @@ INSERT INTO `tb_01password` (`id_password`, `id_fakultas`, `id_prodi`, `nidn_dos
 
 CREATE TABLE `tb_02fakultas` (
   `kode_pts` varchar(5) DEFAULT NULL,
-  `id_kodefakultas` varchar(5) NOT NULL,
+  `id_fakultas` varchar(5) NOT NULL,
   `nama_fakultas` varchar(28) DEFAULT NULL,
   `strata` varchar(2) DEFAULT NULL,
   `nomor_sk` varchar(8) DEFAULT NULL,
@@ -167,7 +150,7 @@ CREATE TABLE `tb_02fakultas` (
 -- Dumping data for table `tb_02fakultas`
 --
 
-INSERT INTO `tb_02fakultas` (`kode_pts`, `id_kodefakultas`, `nama_fakultas`, `strata`, `nomor_sk`, `tgl_sk`) VALUES
+INSERT INTO `tb_02fakultas` (`kode_pts`, `id_fakultas`, `nama_fakultas`, `strata`, `nomor_sk`, `tgl_sk`) VALUES
 ('PTS01', 'F0001', 'Fakultas Sains dan Teknologi', 'S1', 'xx/xx/xx', '12/31/2021'),
 ('PTS01', 'F0002', 'Fakultas Sosial Humaniora', 'S1', 'xx/xx/xx', '12/31/2021'),
 ('PTS01', 'F0003', 'Fakultas Ekonomi dan Bisnis', 'S1', 'xx/xx/xx', '12/31/2021'),
@@ -481,7 +464,7 @@ ALTER TABLE `tb_01password`
 -- Indexes for table `tb_02fakultas`
 --
 ALTER TABLE `tb_02fakultas`
-  ADD PRIMARY KEY (`id_kodefakultas`);
+  ADD PRIMARY KEY (`id_fakultas`);
 
 --
 -- Indexes for table `tb_03prodi`
@@ -509,19 +492,19 @@ ALTER TABLE `tb-3b1`
 -- AUTO_INCREMENT for table `tb-3b2`
 --
 ALTER TABLE `tb-3b2`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tb-3b3`
 --
 ALTER TABLE `tb-3b3`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tb-3b4-1`
 --
 ALTER TABLE `tb-3b4-1`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
