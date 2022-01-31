@@ -40,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     public function lanjut_kemenuutama_siakreditasi()
      {$data['tb01_passwordz'] = $this->M01_Password->aktifkan_tb_01password('tb_01password')->result();
 	  $this->load->view('V01_Login/V0101_KopLem');
-      $this->load->view('V01_Login/V0104_MenuKelopok1', $data); // Sesuaikan dengan nama kelompok Anda 
+      $this->load->view('V01_Login/V0104_MenuKelompok2', $data); // Sesuaikan dengan nama kelompok Anda 
 	  $this->load->view('V01_Login/V0103_Waktu');}	
   }
  ?>	
