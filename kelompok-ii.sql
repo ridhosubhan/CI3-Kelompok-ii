@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2022 at 04:18 AM
+-- Generation Time: Feb 01, 2022 at 05:37 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -53,15 +53,6 @@ CREATE TABLE `tb-3b2` (
   `jumlah` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `tb-3b2`
---
-
-INSERT INTO `tb-3b2` (`id`, `sumber_pembiayaan`, `jml_judul_penelitian_TS_2`, `jml_judul_penelitian_TS_1`, `jml_judul_penelitian_TS`, `jumlah`) VALUES
-(4, '1', 3, 4, 5, 120),
-(5, '2', 1, 1, 1, 3),
-(6, '3', 2, 2, 2, 6);
-
 -- --------------------------------------------------------
 
 --
@@ -92,12 +83,126 @@ CREATE TABLE `tb-3b4-1` (
   `jumlah` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `tb-3b4-1`
+-- Table structure for table `tb-3b4-2`
 --
 
-INSERT INTO `tb-3b4-1` (`id`, `jenis_publikasi`, `jml_judul_TS_2`, `jml_judul_TS_1`, `jml_judul_TS`, `jumlah`) VALUES
-(12, '1', 12, 12, 12, 36);
+CREATE TABLE `tb-3b4-2` (
+  `id` int(11) NOT NULL,
+  `jenis_publikasi` varchar(255) NOT NULL,
+  `jml_judul_TS_2` int(11) NOT NULL,
+  `jml_judul_TS_1` int(11) NOT NULL,
+  `jml_judul_TS` int(11) NOT NULL,
+  `jumlah` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb-3b5`
+--
+
+CREATE TABLE `tb-3b5` (
+  `id` int(11) NOT NULL,
+  `nama_dosen` varchar(255) NOT NULL,
+  `jml_artikel_sitasi` int(10) NOT NULL,
+  `jumlah_sitasi` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb-3b6`
+--
+
+CREATE TABLE `tb-3b6` (
+  `id` int(11) NOT NULL,
+  `nama_dosen` varchar(255) NOT NULL,
+  `nama_produk_jasa` text NOT NULL,
+  `deskripsi_produk_jasa` text NOT NULL,
+  `bukti` text NOT NULL,
+  `tahun` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb-3b7-1`
+--
+
+CREATE TABLE `tb-3b7-1` (
+  `id` int(11) NOT NULL,
+  `luaran_penelitian_dan_pkm` varchar(255) NOT NULL,
+  `tahun` int(11) NOT NULL,
+  `keterangan` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb-3b7-2`
+--
+
+CREATE TABLE `tb-3b7-2` (
+  `id` int(11) NOT NULL,
+  `luaran_penelitian_dan_pkm` varchar(255) NOT NULL,
+  `tahun` int(11) NOT NULL,
+  `keterangan` varchar(111) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb-3b73`
+--
+
+CREATE TABLE `tb-3b73` (
+  `id` int(11) NOT NULL,
+  `luaran_penelitian_pkm` varchar(125) NOT NULL,
+  `tahun` year(4) NOT NULL,
+  `keterangan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb-3b74`
+--
+
+CREATE TABLE `tb-3b74` (
+  `id` int(11) NOT NULL,
+  `luaran_penelitian_pkm` varchar(125) NOT NULL,
+  `tahun` year(4) NOT NULL,
+  `keterangan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb-4`
+--
+
+CREATE TABLE `tb-4` (
+  `id` int(11) NOT NULL,
+  `jenis_penggunaan` varchar(125) NOT NULL,
+  `upps_ts_2` float NOT NULL,
+  `upps_ts_1` float NOT NULL,
+  `upps_ts` float NOT NULL,
+  `upps_ts_rata` float NOT NULL,
+  `ps_ts_2` float NOT NULL,
+  `ps_ts_1` float NOT NULL,
+  `ps_ts` float NOT NULL,
+  `ps_ts_rata` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb-4`
+--
+
+INSERT INTO `tb-4` (`id`, `jenis_penggunaan`, `upps_ts_2`, `upps_ts_1`, `upps_ts`, `upps_ts_rata`, `ps_ts_2`, `ps_ts_1`, `ps_ts`, `ps_ts_rata`) VALUES
+(1, '2', 100, 200, 300, 400, 500, 600, 700, 8000);
 
 -- --------------------------------------------------------
 
@@ -455,6 +560,54 @@ ALTER TABLE `tb-3b4-1`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tb-3b4-2`
+--
+ALTER TABLE `tb-3b4-2`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb-3b5`
+--
+ALTER TABLE `tb-3b5`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb-3b6`
+--
+ALTER TABLE `tb-3b6`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb-3b7-1`
+--
+ALTER TABLE `tb-3b7-1`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb-3b7-2`
+--
+ALTER TABLE `tb-3b7-2`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb-3b73`
+--
+ALTER TABLE `tb-3b73`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb-3b74`
+--
+ALTER TABLE `tb-3b74`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb-4`
+--
+ALTER TABLE `tb-4`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tb_01password`
 --
 ALTER TABLE `tb_01password`
@@ -486,7 +639,7 @@ ALTER TABLE `tb_04dosenumb`
 -- AUTO_INCREMENT for table `tb-3b1`
 --
 ALTER TABLE `tb-3b1`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tb-3b2`
@@ -505,6 +658,54 @@ ALTER TABLE `tb-3b3`
 --
 ALTER TABLE `tb-3b4-1`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `tb-3b4-2`
+--
+ALTER TABLE `tb-3b4-2`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tb-3b5`
+--
+ALTER TABLE `tb-3b5`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tb-3b6`
+--
+ALTER TABLE `tb-3b6`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tb-3b7-1`
+--
+ALTER TABLE `tb-3b7-1`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tb-3b7-2`
+--
+ALTER TABLE `tb-3b7-2`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tb-3b73`
+--
+ALTER TABLE `tb-3b73`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tb-3b74`
+--
+ALTER TABLE `tb-3b74`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tb-4`
+--
+ALTER TABLE `tb-4`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

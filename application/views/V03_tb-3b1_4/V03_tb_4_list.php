@@ -15,7 +15,7 @@
     <!-- datatable button -->
     <link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet" crossorigin="anonymous">
     
-    <title>TB 3b2</title>
+    <title>TB 3b74</title>
   </head>
   <body>
 
@@ -26,7 +26,7 @@
     <!-- DataTables -->
     <div class="card mb-3">
         <div class="card-header">
-            <a href="<?php echo site_url('/C03_tb_3b2/add') ?>" class="btn btn-primary float-start">Tambah Data</a>
+            <a href="<?php echo site_url('/C03_tb_4/add') ?>" class="btn btn-primary float-start">Tambah Data</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -34,62 +34,98 @@
                     <thead>
                         <tr>
                             <th rowspan="2">No</th>
-                            <th rowspan="2">Sumber Pembiayaan</th>
-                            <th colspan="3">Jumlah Judul Penelitian</th>
-                            <th rowspan="2">Jumlah</th>
+                            <th rowspan="2">Jenis Penggunaan</th>
+                            <th colspan="4">Unit Pengelolaan Program Studi (Rupiah)</th>
+                            <th colspan="4">Program Studi (Rupiah)</th>
                             <th rowspan="2">Aksi</th>
                         </tr>
                         <tr>
                             <th>TS-2</th>
                             <th>TS-1</th>
                             <th>TS</th>
+                            <th>Rata-rata</th>
+                            <th>TS-2</th>
+                            <th>TS-1</th>
+                            <th>TS</th>
+                            <th>Rata-rata</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                             $no = 0; 
-                            foreach ($tb_3b2 as $data):
+                            foreach ($tb_4 as $data):
                                 $no++; 
                         ?>
                         <tr>
-                            <td width="10">
+                            <td width="100">
                                 <?php echo $no ?>
                             </td>
-                            <td width="150">
+                            <td width="400">
                                 <?php 
-                                 if($data->sumber_pembiayaan==1){
-                                     echo "a.) Perguruan tinggi";
+                                 if($data->jenis_penggunaan==1){
+                                     echo "Biaya Operasional Pendidikan \r\n a. Biaya Dosen (Gaji, Honor)";
                                  } 
-                                 else if($data->sumber_pembiayaan==2){
-                                     echo "b.) Mandiri";
-                                 }
-                                 else if($data->sumber_pembiayaan==3){
-                                     echo "Lembaga dalam negeri (diluar PT)";
-                                 }
-                                 else if($data->sumber_pembiayaan==4){
-                                     echo "Lembaga luar negeri";
-                                 }
+                                 else if($data->jenis_penggunaan==2){
+                                     echo "Biaya Operasional Pendidikan \n b. Biaya Tenaga Kependidikan (Gaji, Honor)";
+                                 }                       
+                                 else if($data->jenis_penggunaan==3){
+                                     echo "Biaya Operasional Pendidikan \n c. Biaya Operasional Pembelajaran (Bahan dan Peralatan Habis Pakai)";
+                                 }                       
+                                 else if($data->jenis_penggunaan==4){
+                                     echo "Biaya Operasional Pendidikan \n d. Biaya Operasional Tidak Langsung (Listrik, Gas, Air, Pemeliharaan Gedung, Pemeliharaan Sarana, Uang Lembur, Telekomunikasi, Konsumsi, Transport Lokal, Pajak, Asuransi, dll.)";
+                                 }                       
+                                 else if($data->jenis_penggunaan==5){
+                                     echo "Biaya operasional kemahasiswaan (penalaran, minat, bakat, dan kesejahteraan).";
+                                }                       
+                                else if($data->jenis_penggunaan==6){
+                                    echo "Jumlah \n Biaya Penelitian";
+                                }                       
+                                else if($data->jenis_penggunaan==7){
+                                    echo "Jumlah \n Biaya PkM";
+                                }                       
+                                else if($data->jenis_penggunaan==8){
+                                    echo "Jumlah \n Biaya Investasi SDM";
+                                }                       
+                                else if($data->jenis_penggunaan==9){
+                                    echo "Jumlah \n Biaya Investasi Sarana";
+                                }                       
+                                else if($data->jenis_penggunaan==10){
+                                    echo "Jumlah \n Biaya Investasi Prasarana";
+                                }                       
                                  else{
                                      echo "-";
                                  }
                                 ?>
                             </td>
                             <td>
-                                <?php echo $data->jml_judul_penelitian_TS_2 ?>
+                                <?php echo $data->upps_ts_2 ?>
                             </td>
                             <td>
-                                <?php echo $data->jml_judul_penelitian_TS_1 ?>
+                                <?php echo $data->upps_ts_1?>
                             </td>
                             <td>
-                                <?php echo $data->jml_judul_penelitian_TS ?>
+                                <?php echo $data->upps_ts_1?>
                             </td>
                             <td>
-                                <?php echo $data->jumlah ?>
+                                <?php echo $data->upps_ts_rata?>
                             </td>
+                            <td>
+                                <?php echo $data->ps_ts_2?>
+                            </td>
+                            <td>
+                                <?php echo $data->ps_ts_1?>
+                            </td>
+                            <td>
+                                <?php echo $data->ps_ts?>
+                            </td>
+                            <td>
+                                <?php echo $data->ps_ts_rata?>
+                            </td>
+                            
                             <td width="150">
-                                <a href="<?php echo site_url('/C03_tb_3b2/edit/'.$data->id) ?>"
+                                <a href="<?php echo site_url('/C03_tb_4/edit/'.$data->id) ?>"
                                     class="btn btn-small btn-warning"><i class="fas fa-edit"></i> Edit</a>
-                                <button  onclick="deleteConfirm('<?php echo site_url('/C03_tb_3b2/delete/'.$data->id) ?>')"
+                                <button  onclick="deleteConfirm('<?php echo site_url('/C03_tb_4/delete/'.$data->id) ?>')"
                                     class="btn btn-small btn-danger"><i class="fas fa-trash"></i> Hapus</button>
                             </td>
                         </tr>

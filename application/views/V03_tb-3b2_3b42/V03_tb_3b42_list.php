@@ -15,7 +15,7 @@
     <!-- datatable button -->
     <link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet" crossorigin="anonymous">
     
-    <title>TB 3b2</title>
+    <title>TB 3b41</title>
   </head>
   <body>
 
@@ -26,29 +26,26 @@
     <!-- DataTables -->
     <div class="card mb-3">
         <div class="card-header">
-            <a href="<?php echo site_url('/C03_tb_3b2/add') ?>" class="btn btn-primary float-start">Tambah Data</a>
+            <a href="<?php echo site_url('/C03_tb_3b42/add') ?>" class="btn btn-primary float-start">Tambah Data</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th rowspan="2">No</th>
-                            <th rowspan="2">Sumber Pembiayaan</th>
-                            <th colspan="3">Jumlah Judul Penelitian</th>
-                            <th rowspan="2">Jumlah</th>
-                            <th rowspan="2">Aksi</th>
-                        </tr>
-                        <tr>
-                            <th>TS-2</th>
-                            <th>TS-1</th>
-                            <th>TS</th>
+                            <th>No</th>
+                            <th>Jenis Publikasi</th>
+                            <th>Jumlah Judul TS-2</th>
+                            <th>Jumlah Judul TS-1</th>
+                            <th>Jumlah Judul TS</th>
+                            <th>Jumlah</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                             $no = 0; 
-                            foreach ($tb_3b2 as $data):
+                            foreach ($tb_3b42 as $data):
                                 $no++; 
                         ?>
                         <tr>
@@ -57,17 +54,35 @@
                             </td>
                             <td width="150">
                                 <?php 
-                                 if($data->sumber_pembiayaan==1){
-                                     echo "a.) Perguruan tinggi";
+                                 if($data->jenis_publikasi==1){
+                                     echo "Jurnal penelitian tidak terakreditasi";
                                  } 
-                                 else if($data->sumber_pembiayaan==2){
-                                     echo "b.) Mandiri";
+                                 else if($data->jenis_publikasi==2){
+                                     echo "Jurnal penelitian nasional terakreditasi";
                                  }
-                                 else if($data->sumber_pembiayaan==3){
-                                     echo "Lembaga dalam negeri (diluar PT)";
+                                 else if($data->jenis_publikasi==3){
+                                     echo "Jurnal penelitian internasional";
                                  }
-                                 else if($data->sumber_pembiayaan==4){
-                                     echo "Lembaga luar negeri";
+                                 else if($data->jenis_publikasi==4){
+                                     echo "Jurnal penelitian internasional bereputasi";
+                                 }
+                                 else if($data->jenis_publikasi==5){
+                                     echo "Seminar wilayah/lokal/perguruan tinggi";
+                                 }
+                                 else if($data->jenis_publikasi==6){
+                                     echo "Seminar nasional";
+                                 }
+                                 else if($data->jenis_publikasi==7){
+                                     echo "Seminar internasional";
+                                 }
+                                 else if($data->jenis_publikasi==8){
+                                     echo "Tulisan di media massa wilayah";
+                                 }
+                                 else if($data->jenis_publikasi==9){
+                                     echo "Tulisan di media massa nasional";
+                                 }
+                                 else if($data->jenis_publikasi==10){
+                                     echo "Tulisan di media massa internasional";
                                  }
                                  else{
                                      echo "-";
@@ -75,21 +90,21 @@
                                 ?>
                             </td>
                             <td>
-                                <?php echo $data->jml_judul_penelitian_TS_2 ?>
+                                <?php echo $data->jml_judul_TS_2 ?>
                             </td>
                             <td>
-                                <?php echo $data->jml_judul_penelitian_TS_1 ?>
+                                <?php echo $data->jml_judul_TS_1 ?>
                             </td>
                             <td>
-                                <?php echo $data->jml_judul_penelitian_TS ?>
+                                <?php echo $data->jml_judul_TS ?>
                             </td>
                             <td>
                                 <?php echo $data->jumlah ?>
                             </td>
                             <td width="150">
-                                <a href="<?php echo site_url('/C03_tb_3b2/edit/'.$data->id) ?>"
+                                <a href="<?php echo site_url('/C03_tb_3b42/edit/'.$data->id) ?>"
                                     class="btn btn-small btn-warning"><i class="fas fa-edit"></i> Edit</a>
-                                <button  onclick="deleteConfirm('<?php echo site_url('/C03_tb_3b2/delete/'.$data->id) ?>')"
+                                <button  onclick="deleteConfirm('<?php echo site_url('/C03_tb_3b42/delete/'.$data->id) ?>')"
                                     class="btn btn-small btn-danger"><i class="fas fa-trash"></i> Hapus</button>
                             </td>
                         </tr>

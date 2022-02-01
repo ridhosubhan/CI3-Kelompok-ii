@@ -155,7 +155,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <li><a href="<?php echo site_url('C03_tb_3b1/index');?>">3.b1. Tabel 3b1</a></li>
       <li><a href="<?php echo site_url('C03_tb_3b2/index');?>">3.b2. Tabel 3b2</a></li>
       <li><a href="<?php echo site_url('C03_tb_3b3/index');?>">3.b3. Tabel 3b3</a></li>
+      
       <li><a href="<?php echo site_url('C03_tb_3b41/index');?>">3.b41. Tabel 3b41</a></li>
+      <li><a href="<?php echo site_url('C03_tb_3b42/index');?>">3.b41. Tabel 3b42</a></li>
+      <li><a href="<?php echo site_url('C03_tb_3b5/index');?>">3.b41. Tabel 3b5</a></li>
+
+      <li><a href="<?php echo site_url('C03_tb_3b6/index');?>">3.b41. Tabel 3b6</a></li>
+      <li><a href="<?php echo site_url('C03_tb_3b71/index');?>">3.b41. Tabel 3b71</a></li>
+      <li><a href="<?php echo site_url('C03_tb_3b72/index');?>">3.b41. Tabel 3b72</a></li>
+
+      <li><a href="<?php echo site_url('C03_tb_3b73/index');?>">3.b41. Tabel 3b73</a></li>
+      <li><a href="<?php echo site_url('C03_tb_3b74/index');?>">3.b41. Tabel 3b74</a></li>
+      <li><a href="<?php echo site_url('C03_tb_4/index');?>">3.b41. Tabel 4</a></li>
 
 	  </ul>	
 	</li>

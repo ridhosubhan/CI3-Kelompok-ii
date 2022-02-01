@@ -15,7 +15,7 @@
     <!-- datatable button -->
     <link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet" crossorigin="anonymous">
     
-    <title>TB 3b2</title>
+    <title>TB 3b71</title>
   </head>
   <body>
 
@@ -26,29 +26,24 @@
     <!-- DataTables -->
     <div class="card mb-3">
         <div class="card-header">
-            <a href="<?php echo site_url('/C03_tb_3b2/add') ?>" class="btn btn-primary float-start">Tambah Data</a>
+            <a href="<?php echo site_url('/C03_tb_3b71/add') ?>" class="btn btn-primary float-start">Tambah Data</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th rowspan="2">No</th>
-                            <th rowspan="2">Sumber Pembiayaan</th>
-                            <th colspan="3">Jumlah Judul Penelitian</th>
-                            <th rowspan="2">Jumlah</th>
-                            <th rowspan="2">Aksi</th>
-                        </tr>
-                        <tr>
-                            <th>TS-2</th>
-                            <th>TS-1</th>
-                            <th>TS</th>
+                            <th>No</th>
+                            <th>Luaran Penelitian dan PKM</th>
+                            <th>Tahun</th>
+                            <th>Keterangan</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                             $no = 0; 
-                            foreach ($tb_3b2 as $data):
+                            foreach ($tb_3b71 as $data):
                                 $no++; 
                         ?>
                         <tr>
@@ -57,39 +52,27 @@
                             </td>
                             <td width="150">
                                 <?php 
-                                 if($data->sumber_pembiayaan==1){
-                                     echo "a.) Perguruan tinggi";
+                                 if($data->luaran_penelitian_dan_pkm==1){
+                                     echo "a) Hak Paten";
                                  } 
-                                 else if($data->sumber_pembiayaan==2){
-                                     echo "b.) Mandiri";
-                                 }
-                                 else if($data->sumber_pembiayaan==3){
-                                     echo "Lembaga dalam negeri (diluar PT)";
-                                 }
-                                 else if($data->sumber_pembiayaan==4){
-                                     echo "Lembaga luar negeri";
-                                 }
+                                 else if($data->luaran_penelitian_dan_pkm==2){
+                                     echo "b) Paten Sederhana";
+                                 }                                 
                                  else{
                                      echo "-";
                                  }
                                 ?>
                             </td>
                             <td>
-                                <?php echo $data->jml_judul_penelitian_TS_2 ?>
+                                <?php echo $data->tahun ?>
                             </td>
                             <td>
-                                <?php echo $data->jml_judul_penelitian_TS_1 ?>
-                            </td>
-                            <td>
-                                <?php echo $data->jml_judul_penelitian_TS ?>
-                            </td>
-                            <td>
-                                <?php echo $data->jumlah ?>
-                            </td>
+                                <?php echo $data->keterangan ?>
+                            </td>                            
                             <td width="150">
-                                <a href="<?php echo site_url('/C03_tb_3b2/edit/'.$data->id) ?>"
+                                <a href="<?php echo site_url('/C03_tb_3b71/edit/'.$data->id) ?>"
                                     class="btn btn-small btn-warning"><i class="fas fa-edit"></i> Edit</a>
-                                <button  onclick="deleteConfirm('<?php echo site_url('/C03_tb_3b2/delete/'.$data->id) ?>')"
+                                <button  onclick="deleteConfirm('<?php echo site_url('/C03_tb_3b71/delete/'.$data->id) ?>')"
                                     class="btn btn-small btn-danger"><i class="fas fa-trash"></i> Hapus</button>
                             </td>
                         </tr>

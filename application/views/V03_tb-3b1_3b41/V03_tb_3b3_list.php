@@ -33,14 +33,18 @@
                 <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Sumber Pembiayaan</th>
-                            <th>Jumlah Judul PKM TS-2</th>
-                            <th>Jumlah Judul PKM TS-1</th>
-                            <th>Jumlah Judul PKM TS</th>
-                            <th>Jumlah</th>
-                            <th>Aksi</th>
+                            <th rowspan="2">No</th>
+                            <th rowspan="2">Sumber Pembiayaan</th>
+                            <th colspan="3">Jumlah Judul PKM</th>
+                            <th rowspan="2">Jumlah</th>
+                            <th rowspan="2">Aksi</th>
                         </tr>
+                        <tr>
+                            <th>TS-2</th>
+                            <th>TS-1</th>
+                            <th>TS</th>
+                        </tr>
+
                     </thead>
                     <tbody>
                         <?php
