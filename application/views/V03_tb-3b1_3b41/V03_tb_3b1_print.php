@@ -25,7 +25,7 @@
             </td>
             <td>
                 <span class="text-center">
-                    <h5>DAFTAR JUDUL TABEL 3b1 BLA BLA BLA</h5>
+                    <h5>DAFTAR PENGAKUAN / REKOGNISI DOSEN</h5>
                     <h5>Universitas Muhammadiyah Bandung</h5>
                     <p style="font-size: 12px;">Jalan Soerkarno-Hatta Nomor 752 Kelurahan Cipadung Kidul,<br>Kecamatan Panyileukan Kota Bandung (04614)</p>
                 </span>

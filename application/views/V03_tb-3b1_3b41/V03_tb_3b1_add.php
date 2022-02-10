@@ -15,7 +15,7 @@
     <!-- datatable button -->
     <link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet" crossorigin="anonymous">
     
-    <title>TB 3b1</title>
+    <title>PENGAKUAN / REKOGNISI DOSEN</title>
   </head>
   <body>
 
@@ -26,7 +26,7 @@
     <!-- DataTables -->
     <div class="card mb-3">
         <div class="card-header">
-            <a href="<?php echo site_url('/C03_tb_3b1/index') ?>" class="btn btn-primary float-start">Back</a>
+            <a href="<?php echo site_url('/C03_tb_3b1/index') ?>" class="btn btn-primary float-start">Back</a> <h3>TAMBAH DATA PENGAKUAN / REKOGNISI DOSEN</h3>
         </div>
         <div class="card-body">
             <?php if ($this->session->flashdata('success')): ?>
@@ -37,7 +37,34 @@
             <?php endif; ?>
             <form action="<?php echo site_url('/C03_tb_3b1/add') ?>" method="post" enctype="multipart/form-data" >
                 <div class="mb-3 row">
-                    <label for="txt_nama_dosen" class="col-sm-2 col-form-label">Nama Dosen <span class="text-danger">*</span></label>
+                    <label for="txt_kode_fakultas" class="col-sm-2 col-form-label">Kode - Nama Fakultas<span class="text-danger">*</span></label>
+                    <div class="col-sm-10">
+                        <select name="txt_kode_fakultas" id="txt_kode_fakultas" class="form-control <?php echo form_error('txt_kode_fakultas') ? 'is-invalid':'' ?>" aria-label="Default select example">
+                            <?php 
+                                echo "<option value='0'>--pilih--</option>";
+                                foreach ($query_data_fakultasx->result() as $prov) { 
+                                    echo "<option value='$prov->id_fakultas'>$prov->id_fakultas -   $prov->nama_fakultas</option>"; 
+                                } 
+                            ?>
+                        </select>
+                        <div class="invalid-feedback">
+                            <?php echo form_error('txt_kode_fakultas') ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="txt_kode_prodi" class="col-sm-2 col-form-label">Kode - Nama Program Studi<span class="text-danger">*</span></label>
+                    <div class="col-sm-10">
+                        <select name="txt_kode_prodi" id="txt_kode_prodi" class="form-control <?php echo form_error('txt_kode_prodi') ? 'is-invalid':'' ?>" aria-label="Default select example">
+                        
+                        </select>
+                        <div class="invalid-feedback">
+                            <?php echo form_error('txt_kode_prodi') ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="txt_nama_dosen" class="col-sm-2 col-form-label">NIDN - Nama Dosen <span class="text-danger">*</span></label>
                     <div class="col-sm-10">
                         <input class="form-control <?php echo form_error('txt_nama_dosen') ? 'is-invalid':'' ?>" type="text" name="txt_nama_dosen" placeholder="Nama Lengkap Dosen" />
                         <div class="invalid-feedback">
@@ -128,5 +155,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
 
+    <script>
+        $(document).on('change', '#txt_kode_fakultas', function() {
+            var vid = $('option:selected', this).attr('value');
+            $.ajax({
+                type: "POST",
+                url: "<?= site_url('/C03_tb_3b1/prodi/')?>"+vid,
+                data:{ id:vid},
+                success: function(results) {
+                    $('#txt_kode_prodi').html('<option value="">-Pilih Program Studi-</option>');
+                    var result = JSON.parse(JSON.stringify(results));
+                    for (var i = 0; i < result.length; i++) {
+                        $('#txt_kode_prodi').append("<option value='"+ result[i].id_kodeprodi +"'>" + result[i].id_kodeprodi + " - "+result[i].nama_prodi +
+                            "</option>");
+                    }
+                }
+            });
+        });
+
+        
+    </script>
   </body>
 </html>

@@ -15,7 +15,7 @@
     <!-- datatable button -->
     <link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet" crossorigin="anonymous">
     
-    <title>TB 3b1</title>
+    <title>PENGAKUAN / REKOGNISI DOSEN</title>
   </head>
   <body>
 
@@ -26,7 +26,7 @@
     <!-- DataTables -->
     <div class="card mb-3">
         <div class="card-header">
-            <a href="<?php echo site_url('/C03_tb_3b1/index') ?>" class="btn btn-primary float-start">Back</a> <h3>EDIT DATA</h3>
+            <a href="<?php echo site_url('/C03_tb_3b1/index') ?>" class="btn btn-primary float-start">Back</a> <h3>EDIT DATA PENGAKUAN / REKOGNISI DOSEN</h3>
         </div>
         <div class="card-body">
             <?php if ($this->session->flashdata('success')): ?>

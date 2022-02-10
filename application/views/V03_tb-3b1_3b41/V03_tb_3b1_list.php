@@ -15,7 +15,7 @@
     <!-- datatable button -->
     <link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet" crossorigin="anonymous">
     
-    <title>TB 3b1</title>
+    <title>PENGAKUAN / REKOGNISI DOSEN</title>
   </head>
   <body>
 
@@ -28,6 +28,7 @@
         <div class="card-header">
             <a href="<?php echo site_url('/C03_tb_3b1/add') ?>" class="btn btn-primary float-start me-4">Tambah Data</a>
             <a href="<?php echo site_url('/C03_tb_3b1/print') ?>" href="#" class="btn btn-info text-white float-start">Print</a>
+            <h3>PENGAKUAN / REKOGNISI DOSEN</h3>
         </div>
         <div class="card-body">
             <div class="table-responsive">

@@ -19,6 +19,7 @@ class C03_tb_3b1 extends CI_Controller
 
     public function add()
     {
+        
         $M03_tb_3b1 = $this->M03_tb_3b1;
         $validation = $this->form_validation;
         $validation->set_rules($M03_tb_3b1->rules());
@@ -27,8 +28,21 @@ class C03_tb_3b1 extends CI_Controller
             $M03_tb_3b1->save();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
         }
+        
+        $data["query_data_fakultasx"] = $this->db->get('tb_02fakultas');
+        $this->load->view("V03_tb-3b1_3b41/V03_tb_3b1_add", $data);
+    }
 
-        $this->load->view("V03_tb-3b1_3b41/V03_tb_3b1_add");
+    public function prodi($id){   
+        $id_fak = $this->input->post('id');
+
+        $M03_tb_3b1 = $this->M03_tb_3b1;
+        $data = $M03_tb_3b1->getProdi($id);
+        
+        return $this->output
+            ->set_content_type('application/json')
+            ->set_status_header(200)
+            ->set_output(json_encode($data));
     }
 
     public function edit($id = null)

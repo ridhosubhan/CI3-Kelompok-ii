@@ -87,4 +87,9 @@ class M03_tb_3b1 extends CI_Model
     {
         return $this->db->delete($this->_table, array("id" => $id));
     }
+
+    public function getProdi($id)
+    {
+        return $this->db->get_where('tb_03prodi', ["id_kodefakultas" => $id])->result();
+    }
 }
