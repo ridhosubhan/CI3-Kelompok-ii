@@ -5,6 +5,7 @@ class M03_tb_3b1 extends CI_Model
     private $_table = "tb-3b1";
 
     // public $id_M03_tb_3b1;
+    public $nidn;
     public $nama_dosen;
     public $bidang_keahlian;
     public $rekognisi_dan_bukti_pendukung;
@@ -60,7 +61,8 @@ class M03_tb_3b1 extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        $this->nama_dosen = $post["txt_nama_dosen"];
+        $this->nidn = $post["txt_nama_dosen"];
+        $this->nama_dosen = $post["txt_nama_dosen_asli"];
         $this->bidang_keahlian = $post["txt_bidang_keahlian"];
         $this->rekognisi_dan_bukti_pendukung = $post["txt_rekognisi_dan_bukti_pendukung"];
         $this->tingkat_wilayah = $post["txt_tingkat_wilayah"];
@@ -73,7 +75,8 @@ class M03_tb_3b1 extends CI_Model
     public function update()
     {
         $post = $this->input->post();
-        $this->nama_dosen = $post["txt_nama_dosen"];
+        $this->nidn = $post["txt_nama_dosen"];
+        $this->nama_dosen = $post["txt_nama_dosen_asli"];
         $this->bidang_keahlian = $post["txt_bidang_keahlian"];
         $this->rekognisi_dan_bukti_pendukung = $post["txt_rekognisi_dan_bukti_pendukung"];
         $this->tingkat_wilayah = $post["txt_tingkat_wilayah"];
@@ -91,5 +94,15 @@ class M03_tb_3b1 extends CI_Model
     public function getProdi($id)
     {
         return $this->db->get_where('tb_03prodi', ["id_kodefakultas" => $id])->result();
+    }
+    
+    public function getDosemumb($id)
+    {
+        return $this->db->get_where('tb_04dosenumb', ["id_kodeprodi" => $id])->result();
+    }
+    
+    public function getnamaDosemumb($id)
+    {
+        return $this->db->get_where('tb_04dosenumb', ["id_nidn" => $id])->result();
     }
 }

@@ -188,21 +188,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</ul>	 
   </li>
     
-  <li><a href="#">3. Proses Jadwal Kuliah Terpadu<span class="arrow"></span></a>
-      <ul class="submenu level-1">
-        <li><a href="Penyusunan_JadwalKuliahTerpadu"><div  align="left">3.1. Tabel Daftar Program Studi di Unit Pengelola Program Studi</div></a></li>			
-		<li><a href="proses_pemanggilan_datakegiatan"><div align="left">3.2. Tabel 1 Kerjasama Tridharma - Pendidikan</div></a></li>			
-		<li><a href="proses_pemanggilan_datakegiatan"><div align="left">3.3. Menghitung Angka KUM Dosen</div></a></li>			
-	  </ul>
-  </li> 
-
-  <li><a href="#">4. Laporan Jadwal Kuliah Terpadu<span class="arrow"></span></a>
-      <ul class="submenu level-1">
-        <li><a href="Penyusunan_JadwalKuliahTerpadu"><div  align="left">4.1. Penyusunan Jadwal Kuliah Terpadu</div></a></li>			
-		<li><a href="proses_pemanggilan_datakegiatan"><div align="left">4.2. Pengusulan Pembuatan SK Mengajar</div></a></li>			
-		<li><a href="proses_pemanggilan_datakegiatan"><div align="left">4.3. Menghitung Angka KUM Dosen</div></a></li>			
-	  </ul>
-  </li>    
+    
 </ul>
 </div>
  <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>

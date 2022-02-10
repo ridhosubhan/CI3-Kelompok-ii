@@ -41,7 +41,7 @@
                     <div class="col-sm-10">
                         <select name="txt_kode_fakultas" id="txt_kode_fakultas" class="form-control <?php echo form_error('txt_kode_fakultas') ? 'is-invalid':'' ?>" aria-label="Default select example">
                             <?php 
-                                echo "<option value='0'>--pilih--</option>";
+                                echo "<option value='0'>-Pilih Fakultas-</option>";
                                 foreach ($query_data_fakultasx->result() as $prov) { 
                                     echo "<option value='$prov->id_fakultas'>$prov->id_fakultas -   $prov->nama_fakultas</option>"; 
                                 } 
@@ -66,7 +66,10 @@
                 <div class="mb-3 row">
                     <label for="txt_nama_dosen" class="col-sm-2 col-form-label">NIDN - Nama Dosen <span class="text-danger">*</span></label>
                     <div class="col-sm-10">
-                        <input class="form-control <?php echo form_error('txt_nama_dosen') ? 'is-invalid':'' ?>" type="text" name="txt_nama_dosen" placeholder="Nama Lengkap Dosen" />
+                        <input class="form-control <?php echo form_error('txt_bidang_keahlian') ? 'is-invalid':'' ?>" type="hidden" name="txt_nama_dosen_asli" id="txt_nama_dosen_asli" placeholder="Bidang Keahlian" />
+                        <select name="txt_nama_dosen" id="txt_nama_dosen" class="form-control <?php echo form_error('txt_nama_dosen') ? 'is-invalid':'' ?>" aria-label="Default select example">
+                        
+                        </select>
                         <div class="invalid-feedback">
                             <?php echo form_error('txt_nama_dosen') ?>
                         </div>
@@ -168,6 +171,39 @@
                     for (var i = 0; i < result.length; i++) {
                         $('#txt_kode_prodi').append("<option value='"+ result[i].id_kodeprodi +"'>" + result[i].id_kodeprodi + " - "+result[i].nama_prodi +
                             "</option>");
+                    }
+                }
+            });
+        });
+
+        $(document).on('change', '#txt_kode_prodi', function() {
+            var pid = $('option:selected', this).attr('value');
+            $.ajax({
+                type: "POST",
+                url: "<?= site_url('/C03_tb_3b1/dosenumb/')?>"+pid,
+                data:{ id:pid},
+                success: function(results) {
+                    $('#txt_nama_dosen').html('<option value="">-Pilih Dosen-</option>');
+                    var result = JSON.parse(JSON.stringify(results));
+                    for (var i = 0; i < result.length; i++) {
+                        $('#txt_nama_dosen').append("<option value='"+ result[i].id_nidn +"'>" + result[i].id_nidn + " - "+result[i].nama_dosen +
+                            "</option>");
+                        // $('#txt_nama_dosen_asli').val(result[i].nama_dosen);
+                    }
+                }
+            });
+        });
+        
+        $(document).on('change', '#txt_nama_dosen', function() {
+            var pid = $('option:selected', this).attr('value');
+            $.ajax({
+                type: "POST",
+                url: "<?= site_url('/C03_tb_3b1/namadosenumb/')?>"+pid,
+                data:{ id:pid},
+                success: function(results) {
+                    var result = JSON.parse(JSON.stringify(results));
+                    for (var i = 0; i < result.length; i++) {
+                        $('#txt_nama_dosen_asli').val(result[i].nama_dosen);
                     }
                 }
             });

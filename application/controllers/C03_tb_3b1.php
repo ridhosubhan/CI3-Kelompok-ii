@@ -44,6 +44,30 @@ class C03_tb_3b1 extends CI_Controller
             ->set_status_header(200)
             ->set_output(json_encode($data));
     }
+    
+    public function dosenumb($id){   
+        $id_fak = $this->input->post('id');
+
+        $M03_tb_3b1 = $this->M03_tb_3b1;
+        $data = $M03_tb_3b1->getDosemumb($id);
+        
+        return $this->output
+            ->set_content_type('application/json')
+            ->set_status_header(200)
+            ->set_output(json_encode($data));
+    }
+    
+    public function namadosenumb($id){   
+        $id_fak = $this->input->post('id');
+
+        $M03_tb_3b1 = $this->M03_tb_3b1;
+        $data = $M03_tb_3b1->getnamaDosemumb($id);
+        
+        return $this->output
+            ->set_content_type('application/json')
+            ->set_status_header(200)
+            ->set_output(json_encode($data));
+    }
 
     public function edit($id = null)
     {
@@ -59,6 +83,7 @@ class C03_tb_3b1 extends CI_Controller
         }
 
         $data["tb_3b1"] = $M03_tb_3b1->getById($id);
+
         if (!$data["tb_3b1"]) show_404();
         
         $this->load->view("V03_tb-3b1_3b41/V03_tb_3b1_edit", $data);

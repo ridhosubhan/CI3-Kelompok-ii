@@ -27,7 +27,7 @@
     <div class="card mb-3">
         <div class="card-header">
             <a href="<?php echo site_url('/C03_tb_3b1/add') ?>" class="btn btn-primary float-start me-4">Tambah Data</a>
-            <a href="<?php echo site_url('/C03_tb_3b1/print') ?>" href="#" class="btn btn-info text-white float-start">Print</a>
+            <a href="<?php echo site_url('/C03_tb_3b1/print') ?>" target="_blank" href="#" class="btn btn-info text-white float-start">Print</a>
             <h3>PENGAKUAN / REKOGNISI DOSEN</h3>
         </div>
         <div class="card-body">
@@ -36,7 +36,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama Dosen</th>
+                            <th width="250">Nama Dosen</th>
                             <th>Bidang Keahlian</th>
                             <th>Rekognisi Bukti Pendukung</th>
                             <th>Tingkat Wilayah</th>

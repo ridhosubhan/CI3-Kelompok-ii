@@ -38,13 +38,21 @@
             <form action="" method="post" enctype="multipart/form-data" >
                 <input type="hidden" name="txt_id" value="<?php echo $tb_3b1->id?>" />
                 <div class="mb-3 row">
-                    <label for="txt_nama_dosen" class="col-sm-2 col-form-label">Nama Dosen <span class="text-danger">*</span></label>
-                    <div class="col-sm-10">
-                        <input class="form-control <?php echo form_error('txt_nama_dosen') ? 'is-invalid':'' ?>" type="text" 
+                    <label for="txt_nama_dosen" class="col-sm-2 col-form-label">NIDN - Nama Dosen <span class="text-danger">*</span></label>
+                    <div class="col-sm-3">
+                        <input readonly class="form-control <?php echo form_error('txt_nama_dosen') ? 'is-invalid':'' ?>" type="text" 
                                 name="txt_nama_dosen" placeholder="Nama Lengkap Dosen" 
-                                value="<?php echo $tb_3b1->nama_dosen ?>"/>
+                                value="<?php echo $tb_3b1->nidn ?>"/>
                         <div class="invalid-feedback">
                             <?php echo form_error('txt_nama_dosen') ?>
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <input readonly class="form-control <?php echo form_error('txt_nama_dosen_asli') ? 'is-invalid':'' ?>" type="text" 
+                                name="txt_nama_dosen_asli" placeholder="Nama Lengkap Dosen" 
+                                value="<?php echo $tb_3b1->nama_dosen ?>"/>
+                        <div class="invalid-feedback">
+                            <?php echo form_error('txt_nama_dosen_asli') ?>
                         </div>
                     </div>
                 </div>
