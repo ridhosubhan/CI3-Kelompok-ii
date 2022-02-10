@@ -136,8 +136,7 @@ h1 { color: #444;
 	 padding: 14px 15px 10px 15px;}
  </style>
  
- <style type="text/css">
-<!--
+ <!-- <style type="text/css">
 .style31 {
 	color: #FF0000;
 	font-weight: bold;
@@ -150,8 +149,7 @@ h1 { color: #444;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
 }
--->
- </style>
+</style> -->
  
 <body style="background-color: #FFFFFF;" style="font-size: 100%;">
 <form id="form" method="post" action="Proses_Entrydatapassword_3"> 

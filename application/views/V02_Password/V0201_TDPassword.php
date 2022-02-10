@@ -118,18 +118,14 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 </script>
 
  <style type="text/css">
-<!--
 .style10 {font-family: Arial, Helvetica, sans-serif}
 .style12 {color: #FFFF00; font-weight: bold; }
--->
  </style>
 
 </script>
 
  <style type="text/css">
-<!--
 .style10 {font-family: Arial, Helvetica, sans-serif}
--->
 h1 { color: #444;
 	 background-color: transparent;		
 	 font-size: 17px;
@@ -139,7 +135,6 @@ h1 { color: #444;
  </style>
  
  <style type="text/css">
-<!--
 .style31 {
 	color: #FF0000;
 	font-weight: bold;
@@ -152,7 +147,6 @@ h1 { color: #444;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
 }
--->
  </style>
  
 <body style="background-color: #FFFFFF;" style="font-size: 100%;">

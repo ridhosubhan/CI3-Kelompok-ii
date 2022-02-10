@@ -26,7 +26,8 @@
     <!-- DataTables -->
     <div class="card mb-3">
         <div class="card-header">
-            <a href="<?php echo site_url('/C03_tb_3b1/add') ?>" class="btn btn-primary float-start">Tambah Data</a>
+            <a href="<?php echo site_url('/C03_tb_3b1/add') ?>" class="btn btn-primary float-start me-4">Tambah Data</a>
+            <a href="<?php echo site_url('/C03_tb_3b1/print') ?>" href="#" class="btn btn-info text-white float-start">Print</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -41,7 +42,7 @@
                             <th>Tingkat Nasional</th>
                             <th>Tingkat Internasional</th>
                             <th>Tahun</th>
-                            <th>Aksi</th>
+                            <th class="_aksi">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -75,11 +76,11 @@
                             <td>
                                 <?php echo $data->tahun ?>
                             </td>
-                            <td width="150">
+                            <td class="_aksi" width="150">
                                 <a href="<?php echo site_url('/C03_tb_3b1/edit/'.$data->id) ?>"
-                                    class="btn btn-small btn-warning"><i class="fas fa-edit"></i> Edit</a>
+                                    class="btn_edit btn btn-small btn-warning"><i class="fas fa-edit"></i> Edit</a>
                                 <button  onclick="deleteConfirm('<?php echo site_url('/C03_tb_3b1/delete/'.$data->id) ?>')"
-                                    class="btn btn-small btn-danger"><i class="fas fa-trash"></i> Hapus</button>
+                                    class="btn_hapus btn btn-small btn-danger"><i class="fas fa-trash"></i> Hapus</button>
                             </td>
                         </tr>
                         <?php endforeach; ?>
@@ -141,10 +142,7 @@
         
         $(document).ready(function() {
             $('#dataTable').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                    'print'
-                ]
+                dom: 'frtip',
             });
         } );
     </script>

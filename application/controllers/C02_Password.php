@@ -63,9 +63,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	     $data['data_passwordx'] = $this->M01_Password->aktifkan_tb_01password('tb_01password')->result();
 		 
         if (($menuxz ==="2") OR ($menuxz ==="3"))                   
-		  { $this->load->view('V01_Login/V0101_KopLem'); 		        
+		{ 
+			// $data = 
+			$this->load->view('V01_Login/V0101_KopLem'); 		        
 		    $this->load->view('V02_Password/V0202_RHPassword',$data); 
-		    $this->load->view('V01_Login/V0103_Waktu'); $nanz = 1; }
+		    $this->load->view('V01_Login/V0103_Waktu'); $nanz = 1;
+			// var_dump($data); 
+		}
         
         if ($menuxz ==="4")                    
 		  { $data['data_passwordx'] = $this->M01_Password->aktifkan_tb_01password('tb_01password')->result();
