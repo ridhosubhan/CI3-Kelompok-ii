@@ -28,7 +28,32 @@ class C03_tb_3b5 extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil disimpan');
         }
 
-        $this->load->view("V03_tb-3b3_3b5/V03_tb_3b5_add");
+        $data["query_data_fakultasx"] = $this->db->get('tb_02fakultas');
+        $this->load->view("V03_tb-3b3_3b5/V03_tb_3b5_add", $data);
+    }
+
+    public function prodi($id){   
+        $id_fak = $this->input->post('id');
+
+        $M03_tb_3b1 = $this->M03_tb_3b1;
+        $data = $M03_tb_3b1->getProdi($id);
+        
+        return $this->output
+            ->set_content_type('application/json')
+            ->set_status_header(200)
+            ->set_output(json_encode($data));
+    }
+    
+    public function dosenumb($id){   
+        $id_fak = $this->input->post('id');
+
+        $M03_tb_3b1 = $this->M03_tb_3b1;
+        $data = $M03_tb_3b1->getDosemumb($id);
+        
+        return $this->output
+            ->set_content_type('application/json')
+            ->set_status_header(200)
+            ->set_output(json_encode($data));
     }
 
     public function edit($id = null)
@@ -57,5 +82,10 @@ class C03_tb_3b5 extends CI_Controller
         if ($this->M03_tb_3b5->delete($id)) {
             redirect(site_url('/C03_tb_3b5/index'));
         }
+    }
+
+    public function print(){
+        $data["tb_3b5"] = $this->M03_tb_3b5->getAll();
+        $this->load->view("V03_tb-3b3_3b5/V03_tb_3b5_print", $data);
     }
 }

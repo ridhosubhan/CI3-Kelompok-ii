@@ -38,19 +38,21 @@
             <form action="" method="post" enctype="multipart/form-data" >
                 <input type="hidden" name="txt_id" value="<?php echo $tb_3b5->id?>" />
                 <div class="mb-3 row">
-                    <label for="txt_nama_dosen" class="col-sm-2 col-form-label">Nama Dosen<span class="text-danger">*</span></label>
-                    <div class="col-sm-10">
-                        <select name="txt_nama_dosen" class="form-control <?php echo form_error('txt_nama_dosen') ? 'is-invalid':'' ?>" aria-label="Default select example">
-                            <option selected disabled>Nama Dosen</option>
-                            <option value="1" <?= $tb_3b5->nama_dosen == '1' ? 'selected' : '' ?> >Dosen A</option>
-                            <option value="2" <?= $tb_3b5->nama_dosen == '2' ? 'selected' : '' ?> >Dosen B</option>
-                            <option value="3" <?= $tb_3b5->nama_dosen == '3' ? 'selected' : '' ?> >Dosen C</option>
-                            <option value="4" <?= $tb_3b5->nama_dosen == '4' ? 'selected' : '' ?> >Dosen D</option>
-                            <option value="5" <?= $tb_3b5->nama_dosen == '5' ? 'selected' : '' ?> >Dosen E</option>
-                          
-                        </select>
+                    <label for="txt_nama_dosen" class="col-sm-2 col-form-label">NIDN - Nama Dosen <span class="text-danger">*</span></label>
+                    <div class="col-sm-3">
+                        <input readonly class="form-control <?php echo form_error('txt_nama_dosen') ? 'is-invalid':'' ?>" type="text" 
+                                name="txt_nama_dosen" placeholder="Nama Lengkap Dosen" 
+                                value="<?php echo $tb_3b5->nidn ?>"/>
                         <div class="invalid-feedback">
                             <?php echo form_error('txt_nama_dosen') ?>
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <input readonly class="form-control <?php echo form_error('txt_nama_dosen_asli') ? 'is-invalid':'' ?>" type="text" 
+                                name="txt_nama_dosen_asli" placeholder="Nama Lengkap Dosen" 
+                                value="<?php echo $tb_3b5->nama_dosen ?>"/>
+                        <div class="invalid-feedback">
+                            <?php echo form_error('txt_nama_dosen_asli') ?>
                         </div>
                     </div>
                 </div>

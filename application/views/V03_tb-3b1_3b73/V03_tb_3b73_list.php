@@ -15,7 +15,7 @@
     <!-- datatable button -->
     <link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet" crossorigin="anonymous">
     
-    <title>TB 3b73</title>
+    <title>Luaran Penelitian/PkM Lainnya - Teknologi Tepat Guna, Produk, Karya Seni, Rekayasa Sosial</title>
   </head>
   <body>
 
@@ -27,6 +27,8 @@
     <div class="card mb-3">
         <div class="card-header">
             <a href="<?php echo site_url('/C03_tb_3b73/add') ?>" class="btn btn-primary float-start">Tambah Data</a>
+            <a href="<?php echo site_url('/C03_tb_3b73/print') ?>" target="_blank" href="#" class=" ms-3 btn btn-info text-white float-start">Print</a>
+            <h3>Luaran Penelitian/PkM Lainnya - Teknologi Tepat Guna, Produk, Karya Seni, Rekayasa Sosial</h3>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -34,7 +36,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Luaran Penelitian dan PKM</th>
+                            <th width="350">Luaran Penelitian dan PKM</th>
                             <th>Tahun (YYYY)</th>
                             <th>Keterangan</th>
                             <th>Aksi</th>
@@ -142,10 +144,7 @@
         
         $(document).ready(function() {
             $('#dataTable').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                    'print'
-                ]
+                dom: 'frtip'
             });
         } );
     </script>

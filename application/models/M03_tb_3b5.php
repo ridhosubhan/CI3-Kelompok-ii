@@ -4,6 +4,7 @@ class M03_tb_3b5 extends CI_Model
 {
     private $_table = "tb-3b5";
 
+    public $nidn;
     public $nama_dosen;
     public $jml_artikel_sitasi;
     public $jumlah_sitasi;
@@ -39,7 +40,8 @@ class M03_tb_3b5 extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        $this->nama_dosen = $post["txt_nama_dosen"];
+        $this->nidn = $post["txt_nama_dosen"];
+        $this->nama_dosen = $post["txt_nama_dosen_asli"];
         $this->jml_artikel_sitasi = $post["txt_jml_artikel_sitasi"];
         $this->jumlah_sitasi = $post["txt_jumlah_sitasi"];
         return $this->db->insert($this->_table, $this);
@@ -48,7 +50,8 @@ class M03_tb_3b5 extends CI_Model
     public function update()
     {
         $post = $this->input->post();
-        $this->nama_dosen = $post["txt_nama_dosen"];
+        $this->nidn = $post["txt_nama_dosen"];
+        $this->nama_dosen = $post["txt_nama_dosen_asli"];
         $this->jml_artikel_sitasi = $post["txt_jml_artikel_sitasi"];
         $this->jumlah_sitasi = $post["txt_jumlah_sitasi"];
         return $this->db->update($this->_table, $this, array('id' => $post["txt_id"]));

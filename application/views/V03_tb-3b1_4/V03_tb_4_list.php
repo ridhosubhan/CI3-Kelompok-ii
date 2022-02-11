@@ -15,7 +15,7 @@
     <!-- datatable button -->
     <link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet" crossorigin="anonymous">
     
-    <title>TB 3b74</title>
+    <title>Penggunaan Dana</title>
   </head>
   <body>
 
@@ -27,6 +27,8 @@
     <div class="card mb-3">
         <div class="card-header">
             <a href="<?php echo site_url('/C03_tb_4/add') ?>" class="btn btn-primary float-start">Tambah Data</a>
+            <a href="<?php echo site_url('/C03_tb_4/print') ?>" target="_blank" href="#" class=" ms-3 btn btn-info text-white float-start">Print</a>
+            <h3>Penggunaan Dana</h3>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -188,10 +190,7 @@
         
         $(document).ready(function() {
             $('#dataTable').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                    'print'
-                ]
+                dom: 'frtip'
             });
         } );
     </script>

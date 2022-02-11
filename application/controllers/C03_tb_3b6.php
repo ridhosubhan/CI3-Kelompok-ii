@@ -28,7 +28,8 @@ class C03_tb_3b6 extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil disimpan');
         }
 
-        $this->load->view("V03_tb-3b1_3b6/V03_tb_3b6_add");
+        $data["query_data_fakultasx"] = $this->db->get('tb_02fakultas');
+        $this->load->view("V03_tb-3b1_3b6/V03_tb_3b6_add", $data);
     }
 
     public function edit($id = null)
@@ -57,5 +58,10 @@ class C03_tb_3b6 extends CI_Controller
         if ($this->M03_tb_3b6->delete($id)) {
             redirect(site_url('/C03_tb_3b6/index'));
         }
+    }
+
+    public function print(){
+        $data["tb_3b6"] = $this->M03_tb_3b6->getAll();
+        $this->load->view("V03_tb-3b1_3b6/V03_tb_3b6_print", $data);
     }
 }

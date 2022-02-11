@@ -25,7 +25,7 @@
             </td>
             <td>
                 <span class="text-center">
-                    <h5>DAFTAR PENGAKUAN / REKOGNISI DOSEN</h5>
+                    <h5>Daftar Produk/Jasa DTPS yang Diadopsi oleh Industri/Masyarakat</h5>
                     <h5>Universitas Muhammadiyah Bandung</h5>
                     <p style="font-size: 12px;">Jalan Soerkarno-Hatta Nomor 752 Kelurahan Cipadung Kidul,<br>Kecamatan Panyileukan Kota Bandung (04614)</p>
                 </span>
@@ -42,42 +42,34 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>Nama Dosen</th>
-                <th>Bidang Keahlian</th>
-                <th>Rekognisi Bukti Pendukung</th>
-                <th>Tingkat Wilayah</th>
-                <th>Tingkat Nasional</th>
-                <th>Tingkat Internasional</th>
+                <th>NIDN - Nama Dosen</th>
+                <th>Nama Produk/Jasa</th>
+                <th>Deskripsi Produk/Jasa</th>
+                <th>Bukti</th>
                 <th>Tahun</th>
             </tr>
         </thead>
         <tbody>
             <?php
                 $no = 0; 
-                foreach ($tb_3b1 as $data):
+                foreach ($tb_3b6 as $data):
                     $no++; 
             ?>
             <tr>
                 <td width="10">
                     <?php echo $no ?>
                 </td>
-                <td width="150">
-                    <?php echo $data->nama_dosen ?>
+                <td>
+                    <?php echo $data->nidn." - ".$data->nama_dosen  ?>
                 </td>
                 <td>
-                    <?php echo $data->bidang_keahlian ?>
+                    <?php echo $data->nama_produk_jasa ?>
                 </td>
                 <td>
-                    <?php echo $data->rekognisi_dan_bukti_pendukung ?>
+                    <?php echo $data->deskripsi_produk_jasa ?>
                 </td>
                 <td>
-                    <?php echo $data->tingkat_wilayah ?>
-                </td>
-                <td>
-                    <?php echo $data->tingkat_nasional ?>
-                </td>
-                <td>
-                    <?php echo $data->tingkat_internasional ?>
+                    <?php echo $data->bukti ?>
                 </td>
                 <td>
                     <?php echo $data->tahun ?>

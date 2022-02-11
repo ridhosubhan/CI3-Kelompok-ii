@@ -15,7 +15,7 @@
     <!-- datatable button -->
     <link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet" crossorigin="anonymous">
     
-    <title>TB 3b71</title>
+    <title>Luaran Penelitian/PkM Lainnya - HKI (Paten, Paten Sederhana)</title>
   </head>
   <body>
 

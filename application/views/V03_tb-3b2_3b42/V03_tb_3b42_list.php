@@ -15,7 +15,7 @@
     <!-- datatable button -->
     <link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet" crossorigin="anonymous">
     
-    <title>TB 3b41</title>
+    <title>Pagelaran/Pameran/Presentasi/Publikasi Ilmiah DTPS</title>
   </head>
   <body>
 
@@ -27,19 +27,24 @@
     <div class="card mb-3">
         <div class="card-header">
             <a href="<?php echo site_url('/C03_tb_3b42/add') ?>" class="btn btn-primary float-start">Tambah Data</a>
+            <a href="<?php echo site_url('/C03_tb_3b42/print') ?>" target="_blank" href="#" class="ms-3 btn btn-info text-white float-start">Print</a>
+            <h3>Pagelaran/Pameran/Presentasi/Publikasi Ilmiah DTPS</h3>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Jenis Publikasi</th>
-                            <th>Jumlah Judul TS-2</th>
-                            <th>Jumlah Judul TS-1</th>
-                            <th>Jumlah Judul TS</th>
-                            <th>Jumlah</th>
-                            <th>Aksi</th>
+                            <th rowspan="2">No</th>
+                            <th rowspan="2" width="350">Jenis Publikasi</th>
+                            <th colspan="3" class="text-center">Jumlah Judul</th>
+                            <th rowspan="2">Jumlah</th>
+                            <th rowspan="2">Aksi</th>
+                        </tr>
+                        <tr>
+                            <th>Judul TS-2</th>
+                            <th>Judul TS-1</th>
+                            <th>Judul TS</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -167,10 +172,7 @@
         
         $(document).ready(function() {
             $('#dataTable').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                    'print'
-                ]
+                dom: 'frtip',
             });
         } );
     </script>

@@ -25,7 +25,7 @@
             </td>
             <td>
                 <span class="text-center">
-                    <h5>DAFTAR PENGAKUAN / REKOGNISI DOSEN</h5>
+                    <h5>Karya Ilmiah DTPS yang Disitasi</h5>
                     <h5>Universitas Muhammadiyah Bandung</h5>
                     <p style="font-size: 12px;">Jalan Soerkarno-Hatta Nomor 752 Kelurahan Cipadung Kidul,<br>Kecamatan Panyileukan Kota Bandung (04614)</p>
                 </span>
@@ -38,49 +38,35 @@
     </table>
     <!-- HEADER -->
     <hr style="border: 2px solid black;">
+    
     <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
             <tr>
                 <th>No</th>
-                <th>Nama Dosen</th>
-                <th>Bidang Keahlian</th>
-                <th>Rekognisi Bukti Pendukung</th>
-                <th>Tingkat Wilayah</th>
-                <th>Tingkat Nasional</th>
-                <th>Tingkat Internasional</th>
-                <th>Tahun</th>
+                <th width="350">NIDN - Nama Dosen</th>
+                <th>Jumlah Artikel Sitasi</th>
+                <th>Jumlah Sitasi</th>
             </tr>
         </thead>
         <tbody>
             <?php
                 $no = 0; 
-                foreach ($tb_3b1 as $data):
+                foreach ($tb_3b5 as $data):
                     $no++; 
             ?>
             <tr>
                 <td width="10">
                     <?php echo $no ?>
                 </td>
-                <td width="150">
-                    <?php echo $data->nama_dosen ?>
+                <td>
+                    <?php echo $data->nidn." - ".$data->nama_dosen ?>
                 </td>
                 <td>
-                    <?php echo $data->bidang_keahlian ?>
+                    <?php echo $data->jml_artikel_sitasi ?>
                 </td>
+                
                 <td>
-                    <?php echo $data->rekognisi_dan_bukti_pendukung ?>
-                </td>
-                <td>
-                    <?php echo $data->tingkat_wilayah ?>
-                </td>
-                <td>
-                    <?php echo $data->tingkat_nasional ?>
-                </td>
-                <td>
-                    <?php echo $data->tingkat_internasional ?>
-                </td>
-                <td>
-                    <?php echo $data->tahun ?>
+                    <?php echo $data->jumlah_sitasi ?>
                 </td>
             </tr>
             <?php endforeach; ?>

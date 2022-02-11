@@ -49,7 +49,8 @@ class M03_tb_3b6 extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        $this->nama_dosen = $post["txt_nama_dosen"];
+        $this->nidn = $post["txt_nama_dosen"];
+        $this->nama_dosen = $post["txt_nama_dosen_asli"];
         $this->nama_produk_jasa = $post["txt_nama_produk_jasa"];
         $this->deskripsi_produk_jasa = $post["txt_deskripsi_produk_jasa"];
         $this->bukti = $post["txt_bukti"];
@@ -60,7 +61,8 @@ class M03_tb_3b6 extends CI_Model
     public function update()
     {
         $post = $this->input->post();
-        $this->nama_dosen = $post["txt_nama_dosen"];
+        $this->nidn = $post["txt_nama_dosen"];
+        $this->nama_dosen = $post["txt_nama_dosen_asli"];
         $this->nama_produk_jasa = $post["txt_nama_produk_jasa"];
         $this->deskripsi_produk_jasa = $post["txt_deskripsi_produk_jasa"];
         $this->bukti = $post["txt_bukti"];

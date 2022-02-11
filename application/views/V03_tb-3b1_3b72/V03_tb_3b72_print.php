@@ -25,7 +25,7 @@
             </td>
             <td>
                 <span class="text-center">
-                    <h5>DAFTAR PENGAKUAN / REKOGNISI DOSEN</h5>
+                    <h6>Luaran Penelitian/PkM Lainnya - HKI (Hak Cipta, Desain Produk Industri, dll.)</h6>
                     <h5>Universitas Muhammadiyah Bandung</h5>
                     <p style="font-size: 12px;">Jalan Soerkarno-Hatta Nomor 752 Kelurahan Cipadung Kidul,<br>Kecamatan Panyileukan Kota Bandung (04614)</p>
                 </span>
@@ -42,19 +42,15 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>Nama Dosen</th>
-                <th>Bidang Keahlian</th>
-                <th>Rekognisi Bukti Pendukung</th>
-                <th>Tingkat Wilayah</th>
-                <th>Tingkat Nasional</th>
-                <th>Tingkat Internasional</th>
-                <th>Tahun</th>
+                <th>Luaran Penelitian dan PKM</th>
+                <th>Tahun (YYYY)</th>
+                <th>Keterangan</th>
             </tr>
         </thead>
         <tbody>
             <?php
                 $no = 0; 
-                foreach ($tb_3b1 as $data):
+                foreach ($tb_3b72 as $data):
                     $no++; 
             ?>
             <tr>
@@ -62,25 +58,32 @@
                     <?php echo $no ?>
                 </td>
                 <td width="150">
-                    <?php echo $data->nama_dosen ?>
-                </td>
-                <td>
-                    <?php echo $data->bidang_keahlian ?>
-                </td>
-                <td>
-                    <?php echo $data->rekognisi_dan_bukti_pendukung ?>
-                </td>
-                <td>
-                    <?php echo $data->tingkat_wilayah ?>
-                </td>
-                <td>
-                    <?php echo $data->tingkat_nasional ?>
-                </td>
-                <td>
-                    <?php echo $data->tingkat_internasional ?>
+                    <?php 
+                        if($data->luaran_penelitian_dan_pkm==1){
+                            echo "Hak Cipta";
+                        } 
+                        else if($data->luaran_penelitian_dan_pkm==2){
+                            echo "Desain Produk Industri";
+                        }
+                        else if($data->luaran_penelitian_dan_pkm==3){
+                            echo "Perlindungan Varietas Tanaman";
+                        }
+                        else if($data->luaran_penelitian_dan_pkm==4){
+                            echo "Desain Tata Letak Sirkuit Terpadu";
+                        }
+                        else if($data->luaran_penelitian_dan_pkm==5){
+                            echo "Dan Lain-lain";
+                        }                           
+                        else{
+                            echo "-";
+                        }
+                    ?>
                 </td>
                 <td>
                     <?php echo $data->tahun ?>
+                </td>
+                <td>
+                    <?php echo $data->keterangan?>
                 </td>
             </tr>
             <?php endforeach; ?>

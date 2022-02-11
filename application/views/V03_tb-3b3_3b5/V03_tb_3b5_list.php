@@ -15,7 +15,7 @@
     <!-- datatable button -->
     <link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet" crossorigin="anonymous">
     
-    <title>TB 3b5</title>
+    <title>Karya Ilmiah DTPS yang Disitasi</title>
   </head>
   <body>
 
@@ -27,6 +27,8 @@
     <div class="card mb-3">
         <div class="card-header">
             <a href="<?php echo site_url('/C03_tb_3b5/add') ?>" class="btn btn-primary float-start">Tambah Data</a>
+            <a href="<?php echo site_url('/C03_tb_3b5/print') ?>" target="_blank" href="#" class=" ms-3 btn btn-info text-white float-start">Print</a>
+            <h3>Karya Ilmiah DTPS yang Disitasi</h3>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -34,7 +36,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama Dosen</th>
+                            <th width="350">NIDN - Nama Dosen</th>
                             <th>Jumlah Artikel Sitasi</th>
                             <th>Jumlah Sitasi</th>
                             <th>Aksi</th>
@@ -50,27 +52,8 @@
                             <td width="10">
                                 <?php echo $no ?>
                             </td>
-                            <td width="150">
-                                <?php 
-                                 if($data->nama_dosen==1){
-                                     echo "Dosen A";
-                                 } 
-                                 else if($data->nama_dosen==2){
-                                     echo "Dosen B";
-                                 }
-                                 else if($data->nama_dosen==3){
-                                     echo "Dosen C";
-                                 }
-                                 else if($data->nama_dosen==4){
-                                     echo "Dosen D";
-                                 }
-                                 else if($data->nama_dosen==5){
-                                     echo "Dosen E";
-                                 }
-                                 else{
-                                     echo "-";
-                                 }
-                                ?>
+                            <td>
+                                <?php echo $data->nidn." - ".$data->nama_dosen ?>
                             </td>
                             <td>
                                 <?php echo $data->jml_artikel_sitasi ?>
@@ -145,10 +128,7 @@
         
         $(document).ready(function() {
             $('#dataTable').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                    'print'
-                ]
+                dom: 'frtip',
             });
         } );
     </script>

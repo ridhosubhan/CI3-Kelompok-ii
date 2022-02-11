@@ -25,7 +25,7 @@
             </td>
             <td>
                 <span class="text-center">
-                    <h5>DAFTAR PENGAKUAN / REKOGNISI DOSEN</h5>
+                    <h5>DAFTAR PENELITIAN DTPS</h5>
                     <h5>Universitas Muhammadiyah Bandung</h5>
                     <p style="font-size: 12px;">Jalan Soerkarno-Hatta Nomor 752 Kelurahan Cipadung Kidul,<br>Kecamatan Panyileukan Kota Bandung (04614)</p>
                 </span>
@@ -38,23 +38,25 @@
     </table>
     <!-- HEADER -->
     <hr style="border: 2px solid black;">
+    
     <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
             <tr>
-                <th>No</th>
-                <th>Nama Dosen</th>
-                <th>Bidang Keahlian</th>
-                <th>Rekognisi Bukti Pendukung</th>
-                <th>Tingkat Wilayah</th>
-                <th>Tingkat Nasional</th>
-                <th>Tingkat Internasional</th>
-                <th>Tahun</th>
+                <th rowspan="2">No</th>
+                <th rowspan="2">Sumber Pembiayaan</th>
+                <th colspan="3">Jumlah Judul Penelitian</th>
+                <th rowspan="2">Jumlah</th>
+            </tr>
+            <tr>
+                <th>TS-2</th>
+                <th>TS-1</th>
+                <th>TS</th>
             </tr>
         </thead>
         <tbody>
             <?php
                 $no = 0; 
-                foreach ($tb_3b1 as $data):
+                foreach ($tb_3b2 as $data):
                     $no++; 
             ?>
             <tr>
@@ -62,25 +64,35 @@
                     <?php echo $no ?>
                 </td>
                 <td width="150">
-                    <?php echo $data->nama_dosen ?>
+                    <?php 
+                        if($data->sumber_pembiayaan==1){
+                            echo "a.) Perguruan tinggi";
+                        } 
+                        else if($data->sumber_pembiayaan==2){
+                            echo "b.) Mandiri";
+                        }
+                        else if($data->sumber_pembiayaan==3){
+                            echo "Lembaga dalam negeri (diluar PT)";
+                        }
+                        else if($data->sumber_pembiayaan==4){
+                            echo "Lembaga luar negeri";
+                        }
+                        else{
+                            echo "-";
+                        }
+                    ?>
                 </td>
                 <td>
-                    <?php echo $data->bidang_keahlian ?>
+                    <?php echo $data->jml_judul_penelitian_TS_2 ?>
                 </td>
                 <td>
-                    <?php echo $data->rekognisi_dan_bukti_pendukung ?>
+                    <?php echo $data->jml_judul_penelitian_TS_1 ?>
                 </td>
                 <td>
-                    <?php echo $data->tingkat_wilayah ?>
+                    <?php echo $data->jml_judul_penelitian_TS ?>
                 </td>
                 <td>
-                    <?php echo $data->tingkat_nasional ?>
-                </td>
-                <td>
-                    <?php echo $data->tingkat_internasional ?>
-                </td>
-                <td>
-                    <?php echo $data->tahun ?>
+                    <?php echo $data->jumlah ?>
                 </td>
             </tr>
             <?php endforeach; ?>

@@ -25,7 +25,7 @@
             </td>
             <td>
                 <span class="text-center">
-                    <h5>DAFTAR PENGAKUAN / REKOGNISI DOSEN</h5>
+                    <h5>PUBLIKASI ILMIAH DTPS</h5>
                     <h5>Universitas Muhammadiyah Bandung</h5>
                     <p style="font-size: 12px;">Jalan Soerkarno-Hatta Nomor 752 Kelurahan Cipadung Kidul,<br>Kecamatan Panyileukan Kota Bandung (04614)</p>
                 </span>
@@ -38,23 +38,25 @@
     </table>
     <!-- HEADER -->
     <hr style="border: 2px solid black;">
+    
     <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
             <tr>
-                <th>No</th>
-                <th>Nama Dosen</th>
-                <th>Bidang Keahlian</th>
-                <th>Rekognisi Bukti Pendukung</th>
-                <th>Tingkat Wilayah</th>
-                <th>Tingkat Nasional</th>
-                <th>Tingkat Internasional</th>
-                <th>Tahun</th>
+                <th rowspan="2">No</th>
+                <th rowspan="2" width="350">Jenis Publikasi</th>
+                <th colspan="3" class="text-center">Jumlah Judul</th>
+                <th rowspan="2">Jumlah</th>
+            </tr>
+            <tr>
+                <th>TS-2</th>
+                <th>TS-1</th>
+                <th>TS</th>
             </tr>
         </thead>
         <tbody>
             <?php
                 $no = 0; 
-                foreach ($tb_3b1 as $data):
+                foreach ($tb_3b42 as $data):
                     $no++; 
             ?>
             <tr>
@@ -62,25 +64,53 @@
                     <?php echo $no ?>
                 </td>
                 <td width="150">
-                    <?php echo $data->nama_dosen ?>
+                    <?php 
+                        if($data->jenis_publikasi==1){
+                            echo "Jurnal penelitian tidak terakreditasi";
+                        } 
+                        else if($data->jenis_publikasi==2){
+                            echo "Jurnal penelitian nasional terakreditasi";
+                        }
+                        else if($data->jenis_publikasi==3){
+                            echo "Jurnal penelitian internasional";
+                        }
+                        else if($data->jenis_publikasi==4){
+                            echo "Jurnal penelitian internasional bereputasi";
+                        }
+                        else if($data->jenis_publikasi==5){
+                            echo "Seminar wilayah/lokal/perguruan tinggi";
+                        }
+                        else if($data->jenis_publikasi==6){
+                            echo "Seminar nasional";
+                        }
+                        else if($data->jenis_publikasi==7){
+                            echo "Seminar internasional";
+                        }
+                        else if($data->jenis_publikasi==8){
+                            echo "Tulisan di media massa wilayah";
+                        }
+                        else if($data->jenis_publikasi==9){
+                            echo "Tulisan di media massa nasional";
+                        }
+                        else if($data->jenis_publikasi==10){
+                            echo "Tulisan di media massa internasional";
+                        }
+                        else{
+                            echo "-";
+                        }
+                    ?>
                 </td>
                 <td>
-                    <?php echo $data->bidang_keahlian ?>
+                    <?php echo $data->jml_judul_TS_2 ?>
                 </td>
                 <td>
-                    <?php echo $data->rekognisi_dan_bukti_pendukung ?>
+                    <?php echo $data->jml_judul_TS_1 ?>
                 </td>
                 <td>
-                    <?php echo $data->tingkat_wilayah ?>
+                    <?php echo $data->jml_judul_TS ?>
                 </td>
                 <td>
-                    <?php echo $data->tingkat_nasional ?>
-                </td>
-                <td>
-                    <?php echo $data->tingkat_internasional ?>
-                </td>
-                <td>
-                    <?php echo $data->tahun ?>
+                    <?php echo $data->jumlah ?>
                 </td>
             </tr>
             <?php endforeach; ?>

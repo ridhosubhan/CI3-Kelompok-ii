@@ -58,4 +58,9 @@ class C03_tb_3b42 extends CI_Controller
             redirect(site_url('/C03_tb_3b42/index'));
         }
     }
+
+    public function print(){
+        $data["tb_3b42"] = $this->M03_tb_3b42->getAll();
+        $this->load->view("V03_tb-3b2_3b42/V03_tb_3b42_print", $data);
+    }
 }
