@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2022 at 05:37 AM
+-- Generation Time: Feb 11, 2022 at 04:55 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `tb-3b1` (
   `id` int(11) NOT NULL,
   `nama_dosen` varchar(255) NOT NULL,
+  `nidn` varchar(120) NOT NULL,
   `bidang_keahlian` varchar(255) NOT NULL,
   `rekognisi_dan_bukti_pendukung` varchar(255) NOT NULL,
   `tingkat_wilayah` varchar(255) NOT NULL,
@@ -37,6 +38,13 @@ CREATE TABLE `tb-3b1` (
   `tingkat_internasional` varchar(255) NOT NULL,
   `tahun` year(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb-3b1`
+--
+
+INSERT INTO `tb-3b1` (`id`, `nama_dosen`, `nidn`, `bidang_keahlian`, `rekognisi_dan_bukti_pendukung`, `tingkat_wilayah`, `tingkat_nasional`, `tingkat_internasional`, `tahun`) VALUES
+(5, 'DIANTI EKA APRILIA, S.Kom, MT', '0409049101', 'Informatika Dianti', 'Ada dong', 'Provinsi', 'Nasional', 'Internasional', 2000);
 
 -- --------------------------------------------------------
 
@@ -53,6 +61,13 @@ CREATE TABLE `tb-3b2` (
   `jumlah` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tb-3b2`
+--
+
+INSERT INTO `tb-3b2` (`id`, `sumber_pembiayaan`, `jml_judul_penelitian_TS_2`, `jml_judul_penelitian_TS_1`, `jml_judul_penelitian_TS`, `jumlah`) VALUES
+(8, '1', 1, 2, 3, 6);
+
 -- --------------------------------------------------------
 
 --
@@ -67,6 +82,13 @@ CREATE TABLE `tb-3b3` (
   `jml_judul_pkm_TS` int(11) NOT NULL,
   `jumlah` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb-3b3`
+--
+
+INSERT INTO `tb-3b3` (`id`, `sumber_pembiayaan`, `jml_judul_pkm_TS_2`, `jml_judul_pkm_TS_1`, `jml_judul_pkm_TS`, `jumlah`) VALUES
+(5, '2', 10, 10, 10, 30);
 
 -- --------------------------------------------------------
 
@@ -83,6 +105,13 @@ CREATE TABLE `tb-3b4-1` (
   `jumlah` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tb-3b4-1`
+--
+
+INSERT INTO `tb-3b4-1` (`id`, `jenis_publikasi`, `jml_judul_TS_2`, `jml_judul_TS_1`, `jml_judul_TS`, `jumlah`) VALUES
+(13, '1', 10, 10, 12, 32);
+
 -- --------------------------------------------------------
 
 --
@@ -98,6 +127,13 @@ CREATE TABLE `tb-3b4-2` (
   `jumlah` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tb-3b4-2`
+--
+
+INSERT INTO `tb-3b4-2` (`id`, `jenis_publikasi`, `jml_judul_TS_2`, `jml_judul_TS_1`, `jml_judul_TS`, `jumlah`) VALUES
+(2, '3', 2, 2, 2, 6);
+
 -- --------------------------------------------------------
 
 --
@@ -107,9 +143,17 @@ CREATE TABLE `tb-3b4-2` (
 CREATE TABLE `tb-3b5` (
   `id` int(11) NOT NULL,
   `nama_dosen` varchar(255) NOT NULL,
+  `nidn` varchar(120) NOT NULL,
   `jml_artikel_sitasi` int(10) NOT NULL,
   `jumlah_sitasi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb-3b5`
+--
+
+INSERT INTO `tb-3b5` (`id`, `nama_dosen`, `nidn`, `jml_artikel_sitasi`, `jumlah_sitasi`) VALUES
+(3, 'DIANTI EKA APRILIA, S.Kom, MT', '0409049101', 9, 100);
 
 -- --------------------------------------------------------
 
@@ -120,11 +164,19 @@ CREATE TABLE `tb-3b5` (
 CREATE TABLE `tb-3b6` (
   `id` int(11) NOT NULL,
   `nama_dosen` varchar(255) NOT NULL,
+  `nidn` varchar(120) NOT NULL,
   `nama_produk_jasa` text NOT NULL,
   `deskripsi_produk_jasa` text NOT NULL,
   `bukti` text NOT NULL,
   `tahun` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb-3b6`
+--
+
+INSERT INTO `tb-3b6` (`id`, `nama_dosen`, `nidn`, `nama_produk_jasa`, `deskripsi_produk_jasa`, `bukti`, `tahun`) VALUES
+(1, 'DIANTI EKA APRILIA, S.Kom, MT', '0409049101', 'Produk diantis', 'Deskripsi Produk', 'Buktinya ada', '2010');
 
 -- --------------------------------------------------------
 
@@ -139,6 +191,13 @@ CREATE TABLE `tb-3b7-1` (
   `keterangan` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tb-3b7-1`
+--
+
+INSERT INTO `tb-3b7-1` (`id`, `luaran_penelitian_dan_pkm`, `tahun`, `keterangan`) VALUES
+(3, '1', 2021, 'Keterangannya');
+
 -- --------------------------------------------------------
 
 --
@@ -151,6 +210,13 @@ CREATE TABLE `tb-3b7-2` (
   `tahun` int(11) NOT NULL,
   `keterangan` varchar(111) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb-3b7-2`
+--
+
+INSERT INTO `tb-3b7-2` (`id`, `luaran_penelitian_dan_pkm`, `tahun`, `keterangan`) VALUES
+(4, '1', 2000, 'Keterangan');
 
 -- --------------------------------------------------------
 
@@ -165,6 +231,13 @@ CREATE TABLE `tb-3b73` (
   `keterangan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tb-3b73`
+--
+
+INSERT INTO `tb-3b73` (`id`, `luaran_penelitian_pkm`, `tahun`, `keterangan`) VALUES
+(2, '3', 1910, 'Keterangan');
+
 -- --------------------------------------------------------
 
 --
@@ -177,6 +250,13 @@ CREATE TABLE `tb-3b74` (
   `tahun` year(4) NOT NULL,
   `keterangan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb-3b74`
+--
+
+INSERT INTO `tb-3b74` (`id`, `luaran_penelitian_pkm`, `tahun`, `keterangan`) VALUES
+(2, '1', 2010, 'Keterangannya');
 
 -- --------------------------------------------------------
 
@@ -639,67 +719,67 @@ ALTER TABLE `tb_04dosenumb`
 -- AUTO_INCREMENT for table `tb-3b1`
 --
 ALTER TABLE `tb-3b1`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tb-3b2`
 --
 ALTER TABLE `tb-3b2`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tb-3b3`
 --
 ALTER TABLE `tb-3b3`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tb-3b4-1`
 --
 ALTER TABLE `tb-3b4-1`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tb-3b4-2`
 --
 ALTER TABLE `tb-3b4-2`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tb-3b5`
 --
 ALTER TABLE `tb-3b5`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tb-3b6`
 --
 ALTER TABLE `tb-3b6`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tb-3b7-1`
 --
 ALTER TABLE `tb-3b7-1`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tb-3b7-2`
 --
 ALTER TABLE `tb-3b7-2`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tb-3b73`
 --
 ALTER TABLE `tb-3b73`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tb-3b74`
 --
 ALTER TABLE `tb-3b74`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tb-4`

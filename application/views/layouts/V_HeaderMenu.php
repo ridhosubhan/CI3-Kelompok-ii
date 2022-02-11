@@ -175,17 +175,49 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <ul class="submenu level-1">
         <li><a href="#"><div align="left">2.1. Tabel 1-4</div><span class="arrow"></span></a>
 		  <ul class="submenu level-2">
-             <li><a href="#"><div align="left">1. tb-ps Tabel Daftar Program Studi di Unit Pengelola Program Studi</div></a></li>
-             <li><a href="#"><div align="left">2. tb-11 Tabel 1 Kerjasama Tridharma - Pendidikan</div></a></li>             	 
-          </ul>
+          <li><a href="#"><div align="left">1. tb-ps Tabel Daftar Program Studi di Unit Pengelola Program Studi</div></a></li>
+          <li><a href="#"><div align="left">2. tb-11 Tabel 1 Kerjasama Tridharma - Pendidikan</div></a></li>             	 
+      </ul>
 		</li>
 		<li><a href="#"><div align="left">2.2. Tabel 5-8</div><span class="arrow"></span></a>
 		  <ul class="submenu level-2">
-             <li><a href="#"><div align="left">1. tb-2a Tabel 2.a Seleksi Mahasiswa</div></a></li>
-             <li><a href="#"><div align="left">2. tb-2b Tabel 2.b Mahasiswa Asing</div></a></li>            		 
-          </ul>
+          <li><a href="#"><div align="left">1. tb-2a Tabel 2.a Seleksi Mahasiswa</div></a></li>
+          <li><a href="#"><div align="left">2. tb-2b Tabel 2.b Mahasiswa Asing</div></a></li>            		 
+      </ul>
 		</li>		
-	</ul>	 
+		<li><a href="#"><div align="left">3.1. Tabel 3b1-3b3</div><span class="arrow"></span></a>
+		  <ul class="submenu level-2">
+          <li><a href="<?php echo site_url('C03_tb_3b1/index');?>"><div align="left">1. Tabel 3.b.1) Pengakuan/Rekognisi Dosen</div></a></li>         		 
+          <li><a href="<?php echo site_url('C03_tb_3b2/index');?>"><div align="left">2. Tabel 3.b.2) Penelitian DTPS</div></a></li>         		 
+          <li><a href="<?php echo site_url('C03_tb_3b3/index');?>"><div align="left">3. Tabel 3.b.3) PkM DTPS</div></a></li>         		 
+      </ul>
+		</li>		
+		
+    <li><a href="#"><div align="left">3.2. Tabel 3b41-3b5</div><span class="arrow"></span></a>
+		  <ul class="submenu level-2">
+          <li><a href="<?php echo site_url('C03_tb_3b41/index');?>"><div align="left">1. Tabel 3.b.41) Publikasi Ilmiah DTPS</div></a></li>         		 
+          <li><a href="<?php echo site_url('C03_tb_3b42/index');?>"><div align="left">2. Tabel 3.b.42) Pagelaran/Pameran/Presentasi/Publikasi Ilmiah DTPS</div></a></li>         		 
+          <li><a href="<?php echo site_url('C03_tb_3b5/index');?>"><div align="left">3. Tabel 3.b.5) Karya Ilmiah DTPS yang Disitasi</div></a></li>         		 
+      </ul>
+		</li>		
+    
+    <li><a href="#"><div align="left">3.3. Tabel 3b6-3b72</div><span class="arrow"></span></a>
+		  <ul class="submenu level-2">
+          <li><a href="<?php echo site_url('C03_tb_3b6/index');?>"><div align="left">1. Tabel 3.b.6) Produk/Jasa DTPS yang Diadopsi oleh Industri/Masyarakat</div></a></li>         		 
+          <li><a href="<?php echo site_url('C03_tb_3b71/index');?>"><div align="left">2. Tabel 3.b.71) Luaran Penelitian/PkM Lainnya - HKI (Paten, Paten Sederhana)</div></a></li>         		 
+          <li><a href="<?php echo site_url('C03_tb_372/index');?>"><div align="left">3. Tabel 3.b.72) Luaran Penelitian/PkM Lainnya - HKI (Hak Cipta, Desain Produk Industri, dll.)</div></a></li>         		 
+      </ul>
+		</li>	
+    
+    <li><a href="#"><div align="left">3.4. Tabel 3b73-4</div><span class="arrow"></span></a>
+		  <ul class="submenu level-2">
+          <li><a href="<?php echo site_url('C03_tb_3b73/index');?>"><div align="left">1. Tabel 3.b.73) Luaran Penelitian/PkM Lainnya - Teknologi Tepat Guna, Produk, Karya Seni, Rekayasa Sosial</div></a></li>         		 
+          <li><a href="<?php echo site_url('C03_tb_3b74/index');?>"><div align="left">2. Tabel 3.b.74) Luaran Penelitian/PkM Lainnya - Buku ber-ISBN, Book Chapter</div></a></li>         		 
+          <li><a href="<?php echo site_url('C03_tb_4/index');?>"><div align="left">3. Tabel 4 Penggunaan Dana</div></a></li>         		 
+      </ul>
+		</li>	
+
+    </ul>	 
   </li>
     
     
